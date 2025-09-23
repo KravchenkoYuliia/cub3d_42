@@ -1,6 +1,6 @@
 #ifndef ERRORS_H
 #define ERRORS_H
 
-# define ERR_MAP "Error\n Forbidden character found in map\n"
+# define NB_OF_ARGS "Error\nPut one argument\n"
 
 #endif

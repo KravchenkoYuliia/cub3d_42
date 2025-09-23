@@ -6,7 +6,7 @@
 /*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 17:46:13 by yukravch          #+#    #+#             */
-/*   Updated: 2025/09/23 16:44:26 by jgossard         ###   ########.fr       */
+/*   Updated: 2025/09/23 17:35:39 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,6 @@ typedef struct s_mlx{
 void	ft_init_win(void);
 void	ft_hook(t_mlx *mlx_struct);
 int		ft_exit(t_mlx *mlx_struct);
+void	ft_check_args(int ac, char **av);
 
 #endif

@@ -5,20 +5,20 @@ LIBFT = libs/minilibx-linux/libmlx.a libs/libft/libft.a
 
 all: $(LIBFT) $(NAME)
 	@echo "✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨"
-	@echo "✨                  ✨✨                   ✨"
-	@echo "✨    ./\___/\.     ✨✨     (\\(\\        ✨"
 	@echo "✨                  ✨✨                  ✨"
-	@echo "✨    ( >^ -^<)     ✨✨     ( -.-)    ✨"
-	@echo "✨                  ✨✨                   ✨"
+	@echo "✨    ./\___/\.     ✨✨     (\\(\\         ✨"
+	@echo "✨                  ✨✨                  ✨"
+	@echo "✨    ( >^ -^<)     ✨✨     ( -.-)       ✨"
+	@echo "✨                  ✨✨                  ✨"
 	@echo "✨    / ⊃ 🌸/       ✨✨     o_(\")(\")     ✨"
-	@echo "✨                  ✨✨                   ✨"
+	@echo "✨                  ✨✨                  ✨"
 	@echo "✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨"
 
 SRC_DIR = sources
 OBJ_DIR = objects
 INC_DIR = -I includes -I libs/libft/includes
 
-FILES = main.c initialization/init_win.c hooks/hook.c the_end/exit.c
+FILES = main.c parsing/check_args.c initialization/init_win.c hooks/hook.c the_end/exit.c
 
 SRC = $(addprefix $(SRC_DIR)/, $(FILES))
 OBJ = $(addprefix $(OBJ_DIR)/, $(FILES:.c=.o))
