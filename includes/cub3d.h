@@ -6,7 +6,7 @@
 /*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 17:46:13 by yukravch          #+#    #+#             */
-/*   Updated: 2025/09/23 16:07:31 by jgossard         ###   ########.fr       */
+/*   Updated: 2025/09/23 16:44:26 by jgossard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include "../libs/minilibx-linux/mlx.h"
 # include "../libs/minilibx-linux/mlx_int.h"
 # include "../libs/libft/include/libft.h"
+#include "../includes/errors.h"
 
 # define WIN_WIDTH 2560 //TODO adapter a chaque ecran
 # define WIN_HEIGHT 1440 //TODO adapter a chaque ecran
