@@ -1,6 +1,7 @@
 
 ## malloc that we need to free at the end
 
+- general struct t_cub and what is inside it;
 - la structure for mlx variable				free(mlx_struct);
 - pointer to make a connection with the minilibX	free(mlx_struct->ptr);
 

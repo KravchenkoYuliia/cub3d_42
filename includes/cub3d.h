@@ -6,7 +6,7 @@
 /*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 17:46:13 by yukravch          #+#    #+#             */
-/*   Updated: 2025/09/23 17:35:39 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/09/23 19:12:40 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,22 +19,17 @@
 # include "../libs/minilibx-linux/mlx.h"
 # include "../libs/minilibx-linux/mlx_int.h"
 # include "../libs/libft/include/libft.h"
-#include "../includes/errors.h"
+# include "../includes/errors.h"
+# include "../includes/structure.h"
 
 # define WIN_WIDTH 2560 //TODO adapter a chaque ecran
 # define WIN_HEIGHT 1440 //TODO adapter a chaque ecran
 
 # define ESC_BUTTON 65307
 
-typedef struct s_mlx{
-	void	*ptr;
-	void	*win;
-	void	*img;
-}	t_mlx;
-
-void	ft_init_win(void);
-void	ft_hook(t_mlx *mlx_struct);
-int		ft_exit(t_mlx *mlx_struct);
+void	ft_init_win(t_cub *cub);
+void	ft_hook(t_cub *cub);
+int		ft_exit(t_cub *cub);
 void	ft_check_args(int ac, char **av);
 
 #endif
