@@ -6,13 +6,14 @@
 /*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 12:19:02 by yukravch          #+#    #+#             */
-/*   Updated: 2025/09/24 15:58:01 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/09/24 16:29:30 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-static void	ft_check_line(t_cub *cub, char *line, char **elements_of_line, bool map_flag)
+static void	ft_check_line(t_cub *cub, char *line,
+		char **elements_of_line, bool map_flag)
 {
 	if (elements_of_line[0][0] == 'C' || elements_of_line[0][0] == 'F')
 		printf("checking rgb colors\n");
@@ -32,8 +33,7 @@ static void	ft_check_line(t_cub *cub, char *line, char **elements_of_line, bool 
 		write(STDERR_FILENO, INVALID_FILE, ft_strlen(INVALID_FILE));
 		ft_free_char_tab(elements_of_line);
 		free(line);
-		free(cub->texture);
-		free(cub);
+		ft_free_all(cub);
 		exit(EXIT_FAILURE);
 	}
 }
@@ -51,7 +51,7 @@ static int	ft_open_descriptional_file(t_cub *cub, char *file)
 	if (fd == -1)
 	{
 		write(STDERR_FILENO, CANT_OPEN, ft_strlen(CANT_OPEN));
-		free(cub);
+		ft_free_all(cub);
 		exit(EXIT_FAILURE);
 	}
 	return (fd);
@@ -60,7 +60,7 @@ static int	ft_open_descriptional_file(t_cub *cub, char *file)
 void	ft_parsing(t_cub *cub, char *descriptional_file)
 {
 	int		fd;
-	bool		map_flag;
+	bool	map_flag;
 	char	*line;
 	char	**elements_of_line;
 
@@ -68,8 +68,11 @@ void	ft_parsing(t_cub *cub, char *descriptional_file)
 	map_flag = false;
 	line = NULL;
 	elements_of_line = NULL;
-	while ((line = get_next_line(fd)))
+	while (1)
 	{
+		line = get_next_line(fd);
+		if (!line)
+			break ;
 		elements_of_line = ft_split(line, ' ');
 		ft_check_line(cub, line, elements_of_line, map_flag);
 		ft_put_line_to_struct();
