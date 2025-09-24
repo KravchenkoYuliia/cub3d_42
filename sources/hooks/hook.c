@@ -6,13 +6,12 @@
 /*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 16:25:28 by yukravch          #+#    #+#             */
-/*   Updated: 2025/09/23 19:13:40 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/09/24 11:19:24 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
-
-int	ft_key_press(int keycode, t_cub *cub)
+static int	ft_key_press(int keycode, t_cub *cub)
 {
 	if (keycode == ESC_BUTTON)
 		ft_exit(cub);

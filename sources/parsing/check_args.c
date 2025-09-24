@@ -6,13 +6,13 @@
 /*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 17:27:47 by yukravch          #+#    #+#             */
-/*   Updated: 2025/09/24 11:15:36 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/09/24 11:18:48 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	ft_check_file_extension(char *scene_description)
+static void	ft_check_file_extension(char *scene_description)
 {
 	int		len;
 	int		len_of_extension;
