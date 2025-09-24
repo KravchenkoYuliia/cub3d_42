@@ -37,12 +37,16 @@ $(O_DIRS):
 $(LIBFT):
 	@$(MAKE) -C libs/minilibx-linux -s
 	@$(MAKE) -C libs/libft -s
+	@$(MAKE) -C libs/get_next_line -s
 
 clean:
 	@$(MAKE) fclean -C libs/libft -s
+	@$(MAKE) fclean -C libs/get_next_line -s
 	@$(MAKE) clean -C libs/minilibx-linux -s
 	@rm -rf $(OBJ_DIR)
 
 fclean: clean
 	@rm -rf $(NAME)
 re: fclean all
+
+.PHONY: all clean fclean re
