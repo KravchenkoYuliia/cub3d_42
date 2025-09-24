@@ -6,7 +6,7 @@
 /*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 18:14:27 by yukravch          #+#    #+#             */
-/*   Updated: 2025/09/23 19:17:00 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/09/24 10:51:01 by jgossard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ typedef enum e_direction {
 	EAST,
 }	t_direction;
 
-typedef enum e_FC {
-	FLOOR,
-	CEILING,
-}	t_FC;
+typedef enum e_surface_type {
+	SURFACE_FLOOR,
+	SURFACE_CEILING,
+}	t_surface_type;
 
 typedef enum e_button {
 	W,
@@ -39,10 +39,10 @@ typedef struct s_texture {
 	char		*path;
 }	t_texture;
 
-typedef struct s_fc_color {
-	t_FC	*fc;
-	int		*colors;
-}	t_fc_color;
+typedef struct s_surface_color {
+	t_surface_type	*surface_type;
+	int				*colors;
+}	t_surface_color;
 
 typedef struct s_point {
 	int	x;
@@ -62,10 +62,10 @@ typedef struct s_map {
 }	t_map;
 
 typedef struct s_cub {
-	t_map		*map;
-	t_texture	*texture;
-	t_fc_color	*fc;
-	t_mlx		*mlx;
+	t_map			*map;
+	t_texture		*texture;
+	t_surface_color	*surface_color;
+	t_mlx			*mlx;
 }	t_cub;
 
 #endif
