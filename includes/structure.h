@@ -6,7 +6,7 @@
 /*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 18:14:27 by yukravch          #+#    #+#             */
-/*   Updated: 2025/09/24 10:51:01 by jgossard         ###   ########.fr       */
+/*   Updated: 2025/09/24 12:39:39 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,12 @@ typedef enum e_button {
 }	t_button;
 
 typedef struct s_texture {
-	t_direction	*direction;
+	t_direction	direction;
 	char		*path;
 }	t_texture;
 
 typedef struct s_surface_color {
-	t_surface_type	*surface_type;
+	t_surface_type	surface_type;
 	int				*colors;
 }	t_surface_color;
 

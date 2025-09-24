@@ -6,7 +6,7 @@
 /*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 17:02:57 by yukravch          #+#    #+#             */
-/*   Updated: 2025/09/23 19:14:07 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/09/24 15:33:59 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	ft_exit(t_cub *cub)
 	mlx_destroy_display(cub->mlx->ptr);
 	free(cub->mlx->ptr);
 	free(cub->mlx);
+	free(cub->texture);
 	free(cub);
 	exit(EXIT_SUCCESS);
 	return (0);

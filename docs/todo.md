@@ -2,7 +2,8 @@
 
 ### Verif file
 - [] check that the program only has 1 argument ✅
-- [] check that we are using a `.cub` file
+- [] check that we are using a `.cub` file ✅
+- [] check if file is empty
 - [] if empty lines, go to the next one except in the map
 - Check that the file always start with the element
 	- [] start with the direction (`NO`, `SO`, `WE`, `EA`)

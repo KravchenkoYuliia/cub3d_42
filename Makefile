@@ -35,7 +35,9 @@ CFLAGS = -Wall -Werror -Wextra $(IFLAGS)
 ############################# INPUT & OBJECT FILES #############################
 SRC_FILES = ${SRC_DIR}/main.c \
 ${SRC_DIR}/parsing/check_args.c \
-${SRC_DIR}/initialization/init_win.c \
+${SRC_DIR}/parsing/read_descriptional_file.c \
+${SRC_DIR}/initialization/init_cub.c \
+${SRC_DIR}/initialization/init_mlx.c \
 ${SRC_DIR}/hooks/hook.c \
 ${SRC_DIR}/the_end/exit.c
 
@@ -48,6 +50,7 @@ OBJ_FILES = $(SRC_FILES:$(SRC_DIR)/%.c=$(BUILD_DIR)/%.o)
 
 # Output Files
 CUB3D_STATIC_LIB = libcub3d.a
+
 
 VALG_FLAG	= valgrind --leak-check=full --show-leak-kinds=all \
 				--track-origins=yes --track-fds=yes --trace-children=yes \

@@ -1,38 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_win.c                                         :+:      :+:    :+:   */
+/*   init_cub.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/22 15:56:38 by yukravch          #+#    #+#             */
-/*   Updated: 2025/09/24 11:19:47 by yukravch         ###   ########.fr       */
+/*   Created: 2025/09/24 12:20:00 by yukravch          #+#    #+#             */
+/*   Updated: 2025/09/24 16:01:31 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	ft_init_win(t_cub *cub)
+t_cub	*ft_init_cub(void)
 {
-	cub->mlx = calloc(1, sizeof(t_mlx));
-	if (!cub->mlx)
+	t_cub	*cub;
+
+	cub = ft_alloc_struct(sizeof(t_cub));
+	if (!cub)
 		exit(EXIT_FAILURE);
-	cub->mlx->ptr = mlx_init();
-	if (!cub->mlx->ptr)
+	cub->texture = calloc(5, sizeof(t_texture)); //4 directions + NULL
+	if (!cub->texture)
 	{
-		free(cub->mlx);
 		free(cub);
 		exit(EXIT_FAILURE);
 	}
-	cub->mlx->win = mlx_new_window(cub->mlx->ptr,
-			WIN_WIDTH, WIN_HEIGHT, "YO");
-	if (!cub->mlx->win)
-	{
-		free(cub->mlx->ptr);
-		free(cub->mlx);
-		free(cub);
-		exit(EXIT_FAILURE);
-	}
-	ft_hook(cub);
-	mlx_loop(cub->mlx->ptr);
+	return (cub);
 }
