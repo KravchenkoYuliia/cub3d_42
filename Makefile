@@ -37,10 +37,11 @@ SRC_FILES = ${SRC_DIR}/main.c \
 ${SRC_DIR}/parsing/check_args.c \
 ${SRC_DIR}/parsing/read_descriptional_file.c \
 ${SRC_DIR}/parsing/handle_every_line_in_file.c \
+${SRC_DIR}/parsing/check_texture.c \
 ${SRC_DIR}/initialization/init_cub.c \
 ${SRC_DIR}/initialization/init_mlx.c \
 ${SRC_DIR}/hooks/hook.c \
-${SRC_DIR}/the_end/exit.c
+${SRC_DIR}/the_end/free_all_and_exit.c
 
 # Remove main.c from SRC_FILES to create a list of common files
 COMMON_FILES = $(filter-out $(SRC_DIR)/main.c, $(SRC_FILES))

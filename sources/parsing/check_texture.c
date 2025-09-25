@@ -1,34 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   exit.c                                             :+:      :+:    :+:   */
+/*   check_texture.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/22 17:02:57 by yukravch          #+#    #+#             */
-/*   Updated: 2025/09/24 16:15:40 by yukravch         ###   ########.fr       */
+/*   Created: 2025/09/25 11:10:32 by yukravch          #+#    #+#             */
+/*   Updated: 2025/09/25 11:57:09 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	ft_free_all(t_cub *cub)
+//NO /path_to_texture
+void	ft_check_texture(t_cub *cub, char **elements_of_line)
 {
-	if (cub && cub->mlx && cub->mlx->ptr)
-		free(cub->mlx->ptr);
-	if (cub && cub->mlx)
-		free(cub->mlx);
-	if (cub && cub->texture)
-		free(cub->texture);
-	if (cub)
-		free(cub);
-}
-
-int	ft_exit(t_cub *cub)
-{
-	mlx_destroy_window(cub->mlx->ptr, cub->mlx->win);
-	mlx_destroy_display(cub->mlx->ptr);
-	ft_free_all(cub);
-	exit(EXIT_SUCCESS);
-	return (0);
+	(void)cub;
+	(void)elements_of_line;
+	printf("checking texture...\n");
 }

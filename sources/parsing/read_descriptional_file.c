@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   read_descriptional_file.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: yukravch <yukravch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 12:19:02 by yukravch          #+#    #+#             */
-/*   Updated: 2025/09/25 10:32:55 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/09/25 12:10:15 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,7 @@ static int	ft_open_descriptional_file(t_cub *cub, char *file)
 	if (fd == -1)
 	{
 		write(STDERR_FILENO, CANT_OPEN, ft_strlen(CANT_OPEN));
-		ft_free_all(cub);
-		exit(EXIT_FAILURE);
+		ft_free_all_and_exit(cub);
 	}
 	return (fd);
 }
@@ -44,6 +43,8 @@ void	ft_parsing(t_cub *cub, char *descriptional_file)
 	bool	first_time;
 	char	*line;
 
+	if (!cub || !descriptional_file)
+		exit(EXIT_FAILURE);
 	cub->fd = ft_open_descriptional_file(cub, descriptional_file);
 	first_time = true;
 	line = NULL;
@@ -55,8 +56,7 @@ void	ft_parsing(t_cub *cub, char *descriptional_file)
 			if (first_time == true)
 			{
 				write(STDERR_FILENO, EMPTY_FILE, ft_strlen(EMPTY_FILE));
-				ft_free_all(cub);
-				exit(EXIT_FAILURE);
+				ft_free_all_and_exit(cub);
 			}
 			break ;
 		}

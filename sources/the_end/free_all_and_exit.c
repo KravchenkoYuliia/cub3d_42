@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hook.c                                             :+:      :+:    :+:   */
+/*   exit.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/22 16:25:28 by yukravch          #+#    #+#             */
-/*   Updated: 2025/09/25 12:15:20 by yukravch         ###   ########.fr       */
+/*   Created: 2025/09/22 17:02:57 by yukravch          #+#    #+#             */
+/*   Updated: 2025/09/25 12:06:11 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-static int	ft_key_press(int keycode, t_cub *cub)
+int	ft_free_all_and_exit(t_cub *cub)
 {
-	if (keycode == ESC_BUTTON)
-		ft_free_all_and_exit(cub);
+	if (cub)
+	{
+		if (cub->mlx)
+		{
+			if (cub->mlx->ptr)
+			{
+				if (cub->mlx->win)
+					mlx_destroy_window(cub->mlx->ptr, cub->mlx->win);
+				mlx_destroy_display(cub->mlx->ptr);
+				free(cub->mlx->ptr);
+			}
+			free(cub->mlx);
+		}
+		if (cub->texture)
+			free(cub->texture);
+		free(cub);
+	}
+	exit(EXIT_SUCCESS);
 	return (0);
-}
-
-void	ft_hook(t_cub *cub)
-{
-	mlx_hook(cub->mlx->win, KeyPress, KeyPressMask,
-		&ft_key_press, cub);
-	mlx_hook(cub->mlx->win, DestroyNotify, KeyPressMask,
-		&ft_free_all_and_exit, cub);
 }
