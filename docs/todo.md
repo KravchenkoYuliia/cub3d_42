@@ -12,7 +12,7 @@
 - Check that the file always start with the element
 	- [] start with the direction (`NO`, `SO`, `WE`, `EA`)
 	- [] path_to_texture
-		- [] check that only 1 path is given, otherwise - error msg
+		- [] check that only 1 path is given, otherwise - error msg✅
 		- [] check that the path exist
 		- [] check that the file exist
 		- [] check that the extension file is correct

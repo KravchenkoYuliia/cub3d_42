@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structure.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: yukravch <yukravch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 18:14:27 by yukravch          #+#    #+#             */
-/*   Updated: 2025/09/25 11:07:06 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/09/25 12:41:33 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,13 +62,13 @@ typedef struct s_map {
 }	t_map;
 
 typedef struct s_cub {
-	t_map		*map;
-	t_texture	*texture;
+	t_map			*map;
+	t_texture		*texture;
 	t_surface_color	*surface_color;
-	t_mlx		*mlx;
+	t_mlx			*mlx;
 // parsing:
-	int			fd;
-	bool		map_flag;	
+	int				fd;
+	bool			map_flag;	
 }	t_cub;
 
 #endif
