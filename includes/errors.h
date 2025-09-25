@@ -6,7 +6,7 @@
 /*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 19:15:55 by yukravch          #+#    #+#             */
-/*   Updated: 2025/09/25 12:40:28 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/09/25 13:31:10 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,7 @@
 # define CANT_OPEN "Error\nCan't open a scene description file.cub\n"
 # define EMPTY_FILE "Error\nThe file.cub is empty\n"
 # define WRONG_TEXTURE "Error\nWrong texture format for map\n"
+# define WRONG_PATH_TEXTURE "Error\nWrong path to texture\n"
+
 
 #endif

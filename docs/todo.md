@@ -11,12 +11,13 @@
 - [] if empty lines, go to the next one except in the map
 - Check that the file always start with the element
 	- [] start with the direction (`NO`, `SO`, `WE`, `EA`)✅
+	- [] check that there is every element and without doubles
 	- [] path_to_texture
 		- [] check that only 1 path is given, otherwise - error msg✅
-		- [] check that the path exist
-		- [] check that the file exist
+		- [] check that the path file exist ✅
 		- [] check that the extension file is correct
-			- [] TODO: format file to be defined
+			- [] extension .xpm (X Pixmap) is supported with MinilibX
+				function -> mlx_xpm_file_to_image
 	- [] RGB format
 		- [] should start with `C` or `F`
 		- [] check value well between `0` and `255` and only digit character

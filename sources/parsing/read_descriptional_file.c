@@ -6,7 +6,7 @@
 /*   By: yukravch <yukravch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 12:19:02 by yukravch          #+#    #+#             */
-/*   Updated: 2025/09/25 12:10:15 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/09/25 14:27:27 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,17 +41,16 @@ static int	ft_open_descriptional_file(t_cub *cub, char *file)
 void	ft_parsing(t_cub *cub, char *descriptional_file)
 {
 	bool	first_time;
-	char	*line;
 
 	if (!cub || !descriptional_file)
 		exit(EXIT_FAILURE);
 	cub->fd = ft_open_descriptional_file(cub, descriptional_file);
 	first_time = true;
-	line = NULL;
+	cub->line = NULL;
 	while (1)
 	{
-		line = get_next_line(cub->fd);
-		if (!line)
+		cub->line = get_next_line(cub->fd);
+		if (!cub->line)
 		{
 			if (first_time == true)
 			{
@@ -61,6 +60,6 @@ void	ft_parsing(t_cub *cub, char *descriptional_file)
 			break ;
 		}
 		first_time = false;
-		ft_handle_every_line(cub, line);
+		ft_handle_every_line(cub);
 	}
 }

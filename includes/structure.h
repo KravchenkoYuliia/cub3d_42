@@ -6,7 +6,7 @@
 /*   By: yukravch <yukravch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 18:14:27 by yukravch          #+#    #+#             */
-/*   Updated: 2025/09/25 12:41:33 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/09/25 14:26:04 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,9 @@ typedef struct s_cub {
 	t_mlx			*mlx;
 // parsing:
 	int				fd;
-	bool			map_flag;	
+	bool			map_flag;
+	char			*line;
+	char			**elements_of_line;
 }	t_cub;
 
 #endif

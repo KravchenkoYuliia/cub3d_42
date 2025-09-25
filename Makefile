@@ -41,6 +41,8 @@ ${SRC_DIR}/parsing/check_texture.c \
 ${SRC_DIR}/initialization/init_cub.c \
 ${SRC_DIR}/initialization/init_mlx.c \
 ${SRC_DIR}/hooks/hook.c \
+${SRC_DIR}/utils/basic_functions.c \
+$(SRC_DIR)/the_end/error_msg_free_exit.c \
 ${SRC_DIR}/the_end/free_all_and_exit.c
 
 # Remove main.c from SRC_FILES to create a list of common files
