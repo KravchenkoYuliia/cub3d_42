@@ -23,9 +23,9 @@
 		- [] check value well between `0` and `255` and only digit character
 		- [] check that we have 3 differents value for `R`, `G`, `B` and no more
 			- [] if more than 3 write an error message
-		- [] check that the values are separated with `,`		
-		
-	
+		- [] check that the values are separated with `,`
+
+
 ### Verif map
 
 - [] Check that we only have `1`, `0`, `N`, `S`,`E`, `W`
@@ -43,6 +43,10 @@ dow, minimizing, etc."
 ## Ray Casting
 
 - [] TODO read smth about it
+- [] Map keyboard touch with action
+	- [] W : to translate forward
+	- [] s : to translate backward
+	- [] s : to translate backward
 
 
 > test qqch important
