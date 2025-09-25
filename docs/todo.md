@@ -10,7 +10,7 @@
 		if struct is NULL after reding file -> map is empty
 - [] if empty lines, go to the next one except in the map
 - Check that the file always start with the element
-	- [] start with the direction (`NO`, `SO`, `WE`, `EA`)
+	- [] start with the direction (`NO`, `SO`, `WE`, `EA`)✅
 	- [] path_to_texture
 		- [] check that only 1 path is given, otherwise - error msg✅
 		- [] check that the path exist
