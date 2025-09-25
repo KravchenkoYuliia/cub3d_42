@@ -6,7 +6,7 @@
 /*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 11:10:32 by yukravch          #+#    #+#             */
-/*   Updated: 2025/09/25 14:42:09 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/09/25 15:00:39 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,7 @@ static void	ft_checking_number_of_elements(t_cub *cub)
 	while (cub->elements_of_line[i])
 		i++;
 	if (i != 2)
-	{
-		ft_read_fd_till_the_end(cub->fd);
-		free(cub->line);
-		ft_free_char_tab(cub->elements_of_line);
-		write(STDERR_FILENO, WRONG_TEXTURE, ft_strlen(WRONG_TEXTURE));
-		ft_free_all_and_exit(cub);
-	}
+		ft_error_msg_free_exit(WRONG_TEXTURE, cub);
 }
 
 static void	ft_checking_direction(t_cub *cub)
@@ -46,11 +40,7 @@ static void	ft_checking_direction(t_cub *cub)
 			return ;
 		i++;
 	}
-	ft_read_fd_till_the_end(cub->fd);
-	free(cub->line);
-	ft_free_char_tab(cub->elements_of_line);
-	write(STDERR_FILENO, WRONG_TEXTURE, ft_strlen(WRONG_TEXTURE));
-	ft_free_all_and_exit(cub);
+	ft_error_msg_free_exit(WRONG_TEXTURE, cub);
 }
 
 static void	ft_checking_path(t_cub *cub)
@@ -61,23 +51,13 @@ static void	ft_checking_path(t_cub *cub)
 	path_to_texture = calloc(ft_strlen(cub->elements_of_line[1])
 			+ 1, sizeof(char));
 	if (!path_to_texture)
-	{
-		ft_read_fd_till_the_end(cub->fd);
-		free(cub->line);
-		ft_free_char_tab(cub->elements_of_line);
-		write(STDERR_FILENO, WRONG_PATH_TEXTURE, ft_strlen(WRONG_PATH_TEXTURE));
-		ft_free_all_and_exit(cub);
-	}
+		ft_error_msg_free_exit(WRONG_PATH_TEXTURE, cub);
 	ft_strcpy_till_new_line(path_to_texture, cub->elements_of_line[1]);
 	fd = open(path_to_texture, O_RDONLY);
 	if (fd == -1)
 	{
 		free(path_to_texture);
-		ft_read_fd_till_the_end(cub->fd);
-		free(cub->line);
-		ft_free_char_tab(cub->elements_of_line);
-		write(STDERR_FILENO, WRONG_PATH_TEXTURE, ft_strlen(WRONG_PATH_TEXTURE));
-		ft_free_all_and_exit(cub);
+		ft_error_msg_free_exit(WRONG_PATH_TEXTURE, cub);
 	}
 	free(path_to_texture);
 	close(fd);
@@ -88,11 +68,7 @@ void	ft_check_texture(t_cub *cub)
 	if (!cub)
 		exit(EXIT_FAILURE);
 	if (!cub->elements_of_line)
-	{
-		ft_read_fd_till_the_end(cub->fd);
-		free(cub->line);
-		ft_free_all_and_exit(cub);
-	}
+		ft_error_msg_free_exit(NULL, cub);
 	//must be 2 elements -> 1)direction 2)/path 3)NULL
 	ft_checking_number_of_elements(cub);
 	ft_checking_direction(cub);

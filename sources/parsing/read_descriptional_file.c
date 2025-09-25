@@ -6,7 +6,7 @@
 /*   By: yukravch <yukravch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 12:19:02 by yukravch          #+#    #+#             */
-/*   Updated: 2025/09/25 14:27:27 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/09/25 14:54:08 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,12 @@ void	ft_read_fd_till_the_end(int fd)
 	}
 }
 
-static int	ft_open_descriptional_file(t_cub *cub, char *file)
+static void	ft_open_descriptional_file(t_cub *cub, char *file)
 {
-	int	fd;
-
-	fd = open(file, O_RDONLY);
-	if (fd == -1)
-	{
-		write(STDERR_FILENO, CANT_OPEN, ft_strlen(CANT_OPEN));
-		ft_free_all_and_exit(cub);
-	}
-	return (fd);
+	cub->fd = -1;
+	cub->fd = open(file, O_RDONLY);
+	if (cub->fd == -1)
+		ft_error_msg_free_exit(CANT_OPEN, cub);
 }
 
 void	ft_parsing(t_cub *cub, char *descriptional_file)
@@ -44,7 +39,7 @@ void	ft_parsing(t_cub *cub, char *descriptional_file)
 
 	if (!cub || !descriptional_file)
 		exit(EXIT_FAILURE);
-	cub->fd = ft_open_descriptional_file(cub, descriptional_file);
+	ft_open_descriptional_file(cub, descriptional_file);
 	first_time = true;
 	cub->line = NULL;
 	while (1)
