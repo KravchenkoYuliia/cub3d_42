@@ -36,6 +36,7 @@ CFLAGS = -Wall -Werror -Wextra $(IFLAGS)
 SRC_FILES = ${SRC_DIR}/main.c \
 ${SRC_DIR}/parsing/check_args.c \
 ${SRC_DIR}/parsing/read_descriptional_file.c \
+${SRC_DIR}/parsing/handle_every_line_in_file.c \
 ${SRC_DIR}/initialization/init_cub.c \
 ${SRC_DIR}/initialization/init_mlx.c \
 ${SRC_DIR}/hooks/hook.c \
