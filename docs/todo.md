@@ -32,7 +32,7 @@
 - [] Check that the map is closed with walls `1`
 - [] check that there is only 1 player (letter on the map)
 	- [] if no player or more that 1 - error msg
-- [] check that map is at the end of file
+- [] check that map is at the end of file ✅
 
 
 ## MinilibX

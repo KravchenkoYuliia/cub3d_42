@@ -6,7 +6,7 @@
 /*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 11:10:32 by yukravch          #+#    #+#             */
-/*   Updated: 2025/09/26 13:33:47 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/09/26 13:47:50 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,8 @@ void	ft_check_texture(t_cub *cub)
 		exit(EXIT_FAILURE);
 	if (!cub->elements_of_line)
 		ft_error_msg_free_exit(NULL, cub);
+	if (cub->map_flag == true)
+		ft_error_msg_free_exit(MAP_PLACING, cub);
 	//must be 2 elements -> 1)direction 2)/path 3)NULL
 	ft_checking_number_of_elements(cub);
 	ft_checking_direction(cub);
