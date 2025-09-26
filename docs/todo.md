@@ -19,16 +19,19 @@
 			- [] extension .xpm (X Pixmap) is supported with MinilibX
 				function -> mlx_xpm_file_to_image
 	- [] RGB format
-		- [] should start with `C` or `F`
-		- [] check value well between `0` and `255` and only digit character
-		- [] check that we have 3 differents value for `R`, `G`, `B` and no more
-			- [] if more than 3 write an error message
-		- [] check that the values are separated with `,`		
+		- [] there only are 2 elements ('C' or 'F' + rgb color) ✅
+		- [] should start with `C` or `F` ✅
+		- [] check value well between `0` and `255` and only digit character ✅
+		- [] check that we have 3 differents value for `R`, `G`, `B` and no more ✅
+			- [] if more than 3 write an error message ✅
+		- [] check that the values are separated with `,` ✅
+		- [] only two ',' ✅
+		- [] no ',' at the start and at the end of RGB ✅		
 		
 	
 ### Verif map
 
-- [] Check that we only have `1`, `0`, `N`, `S`,`E`, `W`
+- [] Check that we only have `1`, `0`, `N`, `S`,`E`, `W` ✅
 - [] Check that the map is closed with walls `1`
 - [] check that there is only 1 player (letter on the map)
 	- [] if no player or more that 1 - error msg
