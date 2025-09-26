@@ -7,7 +7,7 @@
 	- [] if there is nothing inside ✅
 	- [] if there only are spaces/tabs/new_lines:
 		read lines with get next line -> check it -> put it to struct and 
-		if struct is NULL after reding file -> map is empty
+		if struct is NULL after reading file -> map is empty
 - [] if empty lines, go to the next one except in the map
 - Check that the file always start with the element
 	- [] start with the direction (`NO`, `SO`, `WE`, `EA`)✅
@@ -15,7 +15,7 @@
 	- [] path_to_texture
 		- [] check that only 1 path is given, otherwise - error msg✅
 		- [] check that the path file exist ✅
-		- [] check that the extension file is correct
+		- [] check that the extension file is correct ✅
 			- [] extension .xpm (X Pixmap) is supported with MinilibX
 				function -> mlx_xpm_file_to_image
 	- [] RGB format

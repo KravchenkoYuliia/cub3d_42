@@ -1,10 +1,10 @@
 
 
 
-NO file.xpm
-SO file.xpm
-WE file.xpm
-EA file.xpm
+NO ./maps/texture/brick.xpm
+SO ./maps/texture/brick.xpm
+WE ./maps/texture/brick.xpm
+EA ./maps/texture/brick.xpm
 C 123/123/123
 
 

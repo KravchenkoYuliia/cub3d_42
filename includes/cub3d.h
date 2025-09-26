@@ -6,7 +6,7 @@
 /*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 17:46:13 by yukravch          #+#    #+#             */
-/*   Updated: 2025/09/25 14:31:51 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/09/26 13:16:43 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@
 # define ESC_BUTTON 65307
 
 void	ft_check_args(int ac, char **av);
+bool	ft_check_file_extension(char *file_name, char *extension);
 t_cub	*ft_init_cub(void);
 void	ft_init_mlx(t_cub *cub);
 void	ft_parsing(t_cub *cub, char *descriptional_file);

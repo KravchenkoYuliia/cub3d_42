@@ -6,7 +6,7 @@
 /*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 11:10:32 by yukravch          #+#    #+#             */
-/*   Updated: 2025/09/25 15:00:39 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/09/26 13:33:47 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,15 @@ static void	ft_checking_path(t_cub *cub)
 	fd = open(path_to_texture, O_RDONLY);
 	if (fd == -1)
 	{
+		printf("'%s'", path_to_texture);
 		free(path_to_texture);
 		ft_error_msg_free_exit(WRONG_PATH_TEXTURE, cub);
+	}
+	if (ft_check_file_extension(path_to_texture, ".xpm") == false)
+	{
+		free(path_to_texture);
+		close(fd);
+		ft_error_msg_free_exit(WRONG_EXTENSION, cub);
 	}
 	free(path_to_texture);
 	close(fd);
