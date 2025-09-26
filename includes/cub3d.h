@@ -6,7 +6,7 @@
 /*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 17:46:13 by yukravch          #+#    #+#             */
-/*   Updated: 2025/09/26 13:16:43 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/09/26 14:23:05 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ void	ft_init_mlx(t_cub *cub);
 void	ft_parsing(t_cub *cub, char *descriptional_file);
 void	ft_handle_every_line(t_cub *cub);
 void	ft_check_texture(t_cub *cub);
+void	ft_check_rgb_colors(t_cub *cub);
+bool	ft_checking_nb_of_elements_in_array(char **array, int expected_nb);
 void	ft_read_fd_till_the_end(int fd);
 void	ft_hook(t_cub *cub);
 char	*ft_strcpy_till_new_line(char *dest, char *src);

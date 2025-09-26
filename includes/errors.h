@@ -6,7 +6,7 @@
 /*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 19:15:55 by yukravch          #+#    #+#             */
-/*   Updated: 2025/09/26 13:55:01 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/09/26 14:12:40 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,6 @@
 # define WRONG_PATH_TEXTURE "Error\nWrong path to texture\n"
 # define WRONG_EXTENSION "Error\nWrong extension for file with texture\n"
 # define MAP_PLACING "Error\nMap has to be placed at the end of a file\n"
+# define WRONG_COLOR_FORMAT "Error\nWrong color format for map\n"
 
 #endif

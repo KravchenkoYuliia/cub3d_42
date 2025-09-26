@@ -6,7 +6,7 @@
 /*   By: yukravch <yukravch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 17:50:34 by yukravch          #+#    #+#             */
-/*   Updated: 2025/09/26 13:53:51 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/09/26 14:02:01 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@ static void	ft_check_line(t_cub *cub)
 {
 	if (cub->elements_of_line[0][0] == 'C' ||
 			cub->elements_of_line[0][0] == 'F')
-		printf("WIP");
-		//ft_check_rgb_colors(cub);
+		ft_check_rgb_colors(cub);
 	else if (cub->elements_of_line[0][0] == 'N' ||
 			cub->elements_of_line[0][0] == 'S' ||
 			cub->elements_of_line[0][0] == 'W' ||

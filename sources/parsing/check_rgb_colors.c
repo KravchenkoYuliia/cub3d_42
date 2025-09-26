@@ -1,41 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   basic_functions.c                                  :+:      :+:    :+:   */
+/*   check_rgb_colors.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/25 14:14:09 by yukravch          #+#    #+#             */
-/*   Updated: 2025/09/26 14:22:12 by yukravch         ###   ########.fr       */
+/*   Created: 2025/09/26 13:43:09 by yukravch          #+#    #+#             */
+/*   Updated: 2025/09/26 14:26:49 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-char	*ft_strcpy_till_new_line(char *dest, char *src)
+void	ft_check_rgb_colors(t_cub *cub)
 {
-	int	i;
-
-	i = 0;
-	if (!dest || !src)
-		return (NULL);
-	while (src[i] && src[i] != '\n')
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
-}
-
-bool	ft_checking_nb_of_elements_in_array(char **array, int expected_nb)
-{
-	int	i;
-
-	i = 0;
-	while (array[i])
-		i++;
-	if (i != expected_nb)
-		return (false);
-	return (true);
+	//must be 2: 1)F/C     2)12,12,12     3)NULL
+	if (ft_checking_nb_of_elements_in_array(cub->elements_of_line, 2) == false)
+		ft_error_msg_free_exit(WRONG_COLOR_FORMAT, cub);
 }

@@ -6,22 +6,11 @@
 /*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 11:10:32 by yukravch          #+#    #+#             */
-/*   Updated: 2025/09/26 13:47:50 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/09/26 14:23:21 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
-
-static void	ft_checking_number_of_elements(t_cub *cub)
-{
-	int	i;
-
-	i = 0;
-	while (cub->elements_of_line[i])
-		i++;
-	if (i != 2)
-		ft_error_msg_free_exit(WRONG_TEXTURE, cub);
-}
 
 static void	ft_checking_direction(t_cub *cub)
 {
@@ -79,7 +68,8 @@ void	ft_check_texture(t_cub *cub)
 	if (cub->map_flag == true)
 		ft_error_msg_free_exit(MAP_PLACING, cub);
 	//must be 2 elements -> 1)direction 2)/path 3)NULL
-	ft_checking_number_of_elements(cub);
+	if (ft_checking_nb_of_elements_in_array(cub->elements_of_line, 2) == false)
+		ft_error_msg_free_exit(WRONG_TEXTURE, cub);
 	ft_checking_direction(cub);
 	ft_checking_path(cub);
 }
