@@ -1,5 +1,17 @@
 ## Parsing
 
+### Parsing must be done in 2 stages
+####Part1
+ - [] Split line and if it's `NO` `SO` `EA` `WE` `F` or `C` -> work with it
+
+#### Part 2
+ - [] EVERYTHING that is not from Part 1 -> is a map (all type of errors as well)
+ - [] working with map without split -> character by character
+
+
+
+
+
 ### Verif file
 - [] check that the program only has 1 argument ✅
 - [] check that we are using a `.cub` file ✅
@@ -28,7 +40,7 @@
 		- [] only two ',' ✅
 		- [] no ',' at the start and at the end of RGB ✅		
 		
-	
+
 ### Verif map
 
 - [] Check that we only have `1`, `0`, `N`, `S`,`E`, `W` ✅
