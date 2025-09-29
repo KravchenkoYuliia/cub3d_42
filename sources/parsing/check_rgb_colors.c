@@ -6,7 +6,7 @@
 /*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/26 13:43:09 by yukravch          #+#    #+#             */
-/*   Updated: 2025/09/26 16:58:11 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/09/29 12:17:15 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,12 @@ static void	ft_check_commas(t_cub *cub)
 
 void	ft_check_rgb_colors(t_cub *cub)
 {
+	if (!cub)
+		exit(EXIT_FAILURE);
+	if (!cub->elements_of_line)
+		ft_error_msg_free_exit(NULL, cub);
+	if (cub->map_flag == true)
+		ft_error_msg_free_exit(MAP_PLACING, cub);
 	//must be 2: 1)F/C     2)12,12,12     3)NULL
 	if (ft_checking_nb_of_elements_in_array(cub->elements_of_line, 2) == false)
 		ft_error_msg_free_exit(WRONG_COLOR_FORMAT, cub);
