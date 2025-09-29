@@ -6,7 +6,7 @@
 /*   By: yukravch <yukravch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 18:14:27 by yukravch          #+#    #+#             */
-/*   Updated: 2025/09/25 14:26:04 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/09/29 14:05:57 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ typedef enum e_surface_type {
 }	t_surface_type;
 
 typedef enum e_button {
-	W,
-	A,
-	S,
-	D,
-	LEFT,
-	RIGHT,
+	BUTTON_W,
+	BUTTON_A,
+	BUTTON_S,
+	BUTTON_D,
+	BUTTON_LEFT,
+	BUTTON_RIGHT,
 }	t_button;
 
 typedef struct s_texture {
@@ -63,10 +63,16 @@ typedef struct s_map {
 
 typedef struct s_cub {
 	t_map			*map;
-	t_texture		*texture;
+
+	t_texture		north;
+	t_texture		south;
+	t_texture		east;
+	t_texture		west;
+
 	t_surface_color	*surface_color;
 	t_mlx			*mlx;
-// parsing:
+
+// PARSING
 	int				fd;
 	bool			map_flag;
 	char			*line;
