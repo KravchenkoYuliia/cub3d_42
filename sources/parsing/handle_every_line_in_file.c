@@ -6,7 +6,7 @@
 /*   By: yukravch <yukravch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 17:50:34 by yukravch          #+#    #+#             */
-/*   Updated: 2025/09/26 14:02:01 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/09/29 17:08:29 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	ft_handle_every_line(t_cub *cub)
 {
 	if (!cub)
 		exit(EXIT_FAILURE);
-	cub->elements_of_line = NULL;
+	ft_cut_new_line_at_the_end(cub);
 	cub->elements_of_line = ft_split(cub->line, ' ');
 	if (!cub->elements_of_line)
 		ft_error_msg_free_exit(NULL, cub);

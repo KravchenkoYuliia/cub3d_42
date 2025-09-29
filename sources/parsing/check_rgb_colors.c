@@ -6,7 +6,7 @@
 /*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/26 13:43:09 by yukravch          #+#    #+#             */
-/*   Updated: 2025/09/29 12:17:15 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/09/29 17:21:23 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,7 @@ static void	ft_loop_for_every_nb(t_cub *cub, char **rgb)
 	i = 0;
 	while (rgb[i])
 	{
-		if (rgb[i][0] && rgb[i][1] && rgb[i][2] &&
-				rgb[i][3] && rgb[i][3] != '\n')
+		if (rgb[i][0] && rgb[i][1] && rgb[i][2] && rgb[i][3])
 		{
 			ft_free_char_tab(rgb);
 			ft_error_msg_free_exit(WRONG_COLOR_FORMAT, cub);
@@ -80,7 +79,7 @@ static void	ft_check_commas(t_cub *cub)
 	nb_of_commas = 0;
 	len = ft_strlen(cub->elements_of_line[1]);
 	rgb = cub->elements_of_line[1];
-	if (rgb[0] == ',' || rgb[len - 2] == ',')
+	if (rgb[0] == ',' || rgb[len - 1] == ',')
 		ft_error_msg_free_exit(WRONG_COLOR_FORMAT, cub);
 	while (rgb[i])
 	{

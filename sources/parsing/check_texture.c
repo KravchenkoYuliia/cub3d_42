@@ -6,7 +6,7 @@
 /*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 11:10:32 by yukravch          #+#    #+#             */
-/*   Updated: 2025/09/26 14:23:21 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/09/29 17:19:17 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,26 +37,13 @@ static void	ft_checking_path(t_cub *cub)
 	int		fd;
 	char	*path_to_texture;
 
-	path_to_texture = calloc(ft_strlen(cub->elements_of_line[1])
-			+ 1, sizeof(char));
-	if (!path_to_texture)
-		ft_error_msg_free_exit(WRONG_PATH_TEXTURE, cub);
-	ft_strcpy_till_new_line(path_to_texture, cub->elements_of_line[1]);
+	path_to_texture = cub->elements_of_line[1];
 	fd = open(path_to_texture, O_RDONLY);
 	if (fd == -1)
-	{
-		printf("'%s'", path_to_texture);
-		free(path_to_texture);
 		ft_error_msg_free_exit(WRONG_PATH_TEXTURE, cub);
-	}
-	if (ft_check_file_extension(path_to_texture, ".xpm") == false)
-	{
-		free(path_to_texture);
-		close(fd);
-		ft_error_msg_free_exit(WRONG_EXTENSION, cub);
-	}
-	free(path_to_texture);
 	close(fd);
+	if (ft_check_file_extension(path_to_texture, ".xpm") == false)
+		ft_error_msg_free_exit(WRONG_EXTENSION, cub);
 }
 
 void	ft_check_texture(t_cub *cub)
