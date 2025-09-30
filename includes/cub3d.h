@@ -6,7 +6,7 @@
 /*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 17:46:13 by yukravch          #+#    #+#             */
-/*   Updated: 2025/09/30 13:40:59 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/09/30 16:43:40 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ bool	ft_checking_nb_of_elements_in_array(char **array, int expected_nb);
 void	ft_cut_new_line_at_the_end(char *line);
 bool	ft_line_only_has_whitespaces(char *line);
 bool	ft_check_file_extension(char *file_name, char *extension);
+char	*ft_strcpy(char *dest, char *src);
 
 //ERROR FREE EXIT
 void	ft_error_msg_free_exit(char *msg, t_cub *cub);

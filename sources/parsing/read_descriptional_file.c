@@ -6,7 +6,7 @@
 /*   By: yukravch <yukravch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 12:19:02 by yukravch          #+#    #+#             */
-/*   Updated: 2025/09/26 13:54:20 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/09/30 16:25:08 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	ft_parsing(t_cub *cub, char *descriptional_file)
 	bool	first_time;
 
 	if (!cub || !descriptional_file)
-		exit(EXIT_FAILURE);
+		ft_free_all_and_exit(cub);
 	ft_open_descriptional_file(cub, descriptional_file);
 	first_time = true;
 	cub->map_flag = false;

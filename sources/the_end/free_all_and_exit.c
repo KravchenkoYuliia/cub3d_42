@@ -6,7 +6,7 @@
 /*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 17:02:57 by yukravch          #+#    #+#             */
-/*   Updated: 2025/09/29 16:18:08 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/09/30 16:52:26 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ int	ft_free_all_and_exit(t_cub *cub)
 			}
 			free(cub->mlx);
 		}
+		if (cub->north.path)
+			free(cub->north.path);
 		free(cub);
 	}
 	exit(EXIT_SUCCESS);

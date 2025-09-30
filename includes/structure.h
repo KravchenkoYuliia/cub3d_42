@@ -6,23 +6,36 @@
 /*   By: yukravch <yukravch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 18:14:27 by yukravch          #+#    #+#             */
-/*   Updated: 2025/09/29 14:05:57 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/09/30 16:47:55 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCTURE_H
 # define STRUCTURE_H
 
+typedef enum e_elements_of_parsing {
+	FREE = 0,
+	TAKEN = 1,
+	MAP = 'M',
+	NO = 'N',
+	SO = 'S',
+	WE = 'W',
+	EA = 'E',
+	F = 'F',
+	C = 'C',
+}	t_elements_of_parsing;
+
+
 typedef enum e_direction {
-	NORTH,
-	SOUTH,
-	WEST,
-	EAST,
+	NORTH = 'N',
+	SOUTH = 'S',
+	WEST = 'W',
+	EAST = 'E',
 }	t_direction;
 
 typedef enum e_surface_type {
-	SURFACE_FLOOR,
-	SURFACE_CEILING,
+	SURFACE_FLOOR = 'F',
+	SURFACE_CEILING = 'C',
 }	t_surface_type;
 
 typedef enum e_button {
@@ -31,7 +44,7 @@ typedef enum e_button {
 	BUTTON_S,
 	BUTTON_D,
 	BUTTON_LEFT,
-	BUTTON_RIGHT,
+	BUTTON_RIGHT
 }	t_button;
 
 typedef struct s_texture {
@@ -61,6 +74,15 @@ typedef struct s_map {
 	t_point	**grid;
 }	t_map;
 
+typedef struct s_no_doubles {
+	int	north;
+	int	south;
+	int	east;
+	int	west;
+	int	floor;
+	int	ceiling;
+}	t_no_doubles;
+
 typedef struct s_cub {
 	t_map			*map;
 
@@ -77,6 +99,8 @@ typedef struct s_cub {
 	bool			map_flag;
 	char			*line;
 	char			**elements_of_line;
+	t_elements_of_parsing	type;
+	t_no_doubles		no_doubles;
 }	t_cub;
 
 #endif

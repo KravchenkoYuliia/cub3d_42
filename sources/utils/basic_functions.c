@@ -6,7 +6,7 @@
 /*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 14:14:09 by yukravch          #+#    #+#             */
-/*   Updated: 2025/09/30 14:39:09 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/09/30 16:43:21 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,20 @@ bool	ft_line_only_has_whitespaces(char *line)
 		i++;
 	}
 	return (true);
+}
+
+char	*ft_strcpy(char *dest, char *src)
+{
+	int	i;
+
+	i = 0;
+	if (!src)
+		return (NULL);
+	while (src[i])
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }
