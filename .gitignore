@@ -44,6 +44,7 @@ cub3D
 *.su
 *.idb
 *.pdb
+test.cub
 
 # Kernel Module Compile Results
 *.mod*

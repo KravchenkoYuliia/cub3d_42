@@ -6,7 +6,7 @@
 /*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 17:46:13 by yukravch          #+#    #+#             */
-/*   Updated: 2025/09/29 17:12:52 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/09/30 13:18:40 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	ft_hook(t_cub *cub);
 
 //UTILS
 bool	ft_checking_nb_of_elements_in_array(char **array, int expected_nb);
-void	ft_cut_new_line_at_the_end(t_cub *cub);
+void	ft_cut_new_line_at_the_end(char *line);
 
 //ERROR FREE EXIT
 void	ft_error_msg_free_exit(char *msg, t_cub *cub);
