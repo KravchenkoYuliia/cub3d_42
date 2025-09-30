@@ -6,11 +6,32 @@
 /*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 11:10:32 by yukravch          #+#    #+#             */
-/*   Updated: 2025/09/29 17:19:17 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/09/30 13:37:14 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
+
+bool	ft_this_is_texture(t_cub *cub)
+{
+	if (!cub)
+		exit(EXIT_FAILURE);
+	if (!cub->elements_of_line)
+		ft_error_msg_free_exit(NULL, cub);
+	if (cub->elements_of_line[0][0] == 'N'
+			&& cub->elements_of_line[0][1] == 'O')
+		return (true);
+	if (cub->elements_of_line[0][0] == 'S'
+			&& cub->elements_of_line[0][1] == 'O')
+		return (true);
+	if (cub->elements_of_line[0][0] == 'W'
+			&& cub->elements_of_line[0][1] == 'E')
+		return (true);
+	if (cub->elements_of_line[0][0] == 'E'
+			&& cub->elements_of_line[0][1] == 'A')
+		return (true);
+	return (false);
+}
 
 static void	ft_checking_direction(t_cub *cub)
 {

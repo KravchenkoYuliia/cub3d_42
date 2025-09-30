@@ -6,7 +6,7 @@
 /*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 14:14:09 by yukravch          #+#    #+#             */
-/*   Updated: 2025/09/30 13:20:02 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/09/30 14:39:09 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,19 @@ bool	ft_checking_nb_of_elements_in_array(char **array, int expected_nb)
 		i++;
 	if (i != expected_nb)
 		return (false);
+	return (true);
+}
+
+bool	ft_line_only_has_whitespaces(char *line)
+{
+	int	i;
+
+	i = 0;
+	while (line[i])
+	{	
+		if (ft_isspace(line[i]) == 0)
+			return (false);
+		i++;
+	}
 	return (true);
 }
