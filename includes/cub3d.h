@@ -6,7 +6,7 @@
 /*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 17:46:13 by yukravch          #+#    #+#             */
-/*   Updated: 2025/09/30 16:43:40 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/09/30 17:03:35 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ bool	ft_check_file_extension(char *file_name, char *extension);
 char	*ft_strcpy(char *dest, char *src);
 
 //ERROR FREE EXIT
-void	ft_error_msg_free_exit(char *msg, t_cub *cub);
+void	ft_errormsg_free_parsing_free_all_exit(char *msg, t_cub *cub);
 int		ft_free_all_and_exit(t_cub *cub);
 
 #endif

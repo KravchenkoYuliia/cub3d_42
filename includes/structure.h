@@ -6,7 +6,7 @@
 /*   By: yukravch <yukravch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 18:14:27 by yukravch          #+#    #+#             */
-/*   Updated: 2025/09/30 16:47:55 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/09/30 17:13:31 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ typedef enum e_elements_of_parsing {
 	F = 'F',
 	C = 'C',
 }	t_elements_of_parsing;
-
 
 typedef enum e_direction {
 	NORTH = 'N',
@@ -84,23 +83,23 @@ typedef struct s_no_doubles {
 }	t_no_doubles;
 
 typedef struct s_cub {
-	t_map			*map;
+	t_map					*map;
 
-	t_texture		north;
-	t_texture		south;
-	t_texture		east;
-	t_texture		west;
+	t_texture				north;
+	t_texture				south;
+	t_texture				east;
+	t_texture				west;
 
-	t_surface_color	*surface_color;
-	t_mlx			*mlx;
+	t_surface_color			*surface_color;
+	t_mlx					*mlx;
 
 // PARSING
-	int				fd;
-	bool			map_flag;
-	char			*line;
-	char			**elements_of_line;
+	int						fd;
+	bool					map_flag;
+	char					*line;
+	char					**elements_of_line;
 	t_elements_of_parsing	type;
-	t_no_doubles		no_doubles;
+	t_no_doubles			no_doubles;
 }	t_cub;
 
 #endif

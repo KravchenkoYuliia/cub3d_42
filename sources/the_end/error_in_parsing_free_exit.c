@@ -6,13 +6,13 @@
 /*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 14:22:17 by yukravch          #+#    #+#             */
-/*   Updated: 2025/09/30 16:27:12 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/09/30 17:03:11 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	ft_error_msg_free_exit(char *msg, t_cub *cub)
+void	ft_errormsg_free_parsing_free_all_exit(char *msg, t_cub *cub)
 {
 	if (cub)
 	{
