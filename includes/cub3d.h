@@ -13,6 +13,7 @@
 #ifndef CUB3D_H
 # define CUB3D_H
 
+# define _GNU_SOURCE // to use M_PI, need to be declared before including math.h
 # include <unistd.h>
 # include <stdio.h>
 # include <stdlib.h>
@@ -20,6 +21,7 @@
 # include <sys/stat.h>
 # include <fcntl.h>
 # include <limits.h>
+# include <math.h>
 # include "libft.h"
 # include "get_next_line.h"
 # include "mlx.h"

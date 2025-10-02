@@ -27,8 +27,8 @@ IFLAGS =	-I $(LIBFT_DIR)/include \
 			-I $(GNL_DIR)/include \
 			-I $(MLX_LINUX_DIR) \
 			-I $(INCLUDE_DIR)
-# LDFLAGS = -lreadline -lncurses
-MLX_FLAG = -lXext -lX11 -lm -lz -ldl -lglfw
+MLX_FLAG = -lXext -lX11 -lz -ldl -lglfw
+MATH_LIB_FLAG = -lm
 GFLAG = -g3
 CFLAGS = -Wall -Werror -Wextra $(IFLAGS)
 
@@ -101,7 +101,7 @@ $(BUILD_DIR)/%.o: $(SRC_DIR)/%.c
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 $(EXEC): $(LIBS) $(CUB3D_STATIC_LIB) $(MAIN_OBJ)
-	@$(CC) $(CFLAGS) $(MAIN_OBJ) $(CUB3D_STATIC_LIB) $(LIBS) $(MLX_FLAG) -o $@
+	@$(CC) $(CFLAGS) $(MAIN_OBJ) $(CUB3D_STATIC_LIB) $(LIBS) $(MLX_FLAG) $(MATH_LIB_FLAG) -o $@
 	@echo "$(GREEN_COLOR)Executable: $(DEFAULT_COLOR)$(EXEC) created!✅"
 
 debugger: CFLAGS += $(GFLAG)
