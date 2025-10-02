@@ -6,7 +6,7 @@
 /*   By: yukravch <yukravch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 18:14:27 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/02 14:48:38 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/02 15:04:19 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,8 @@ typedef struct s_mlx {
 
 typedef struct s_map {
 	char	**grid;
-	int	width;
-	int	height;
+	int		width;
+	int		height;
 }	t_map;
 
 typedef struct s_elements_tracker {
@@ -101,7 +101,7 @@ typedef struct s_cub {
 	char					*line;
 	char					**elements_of_line;
 	t_elements_of_parsing	type;
-	t_elements_tracker			elements_tracker;
+	t_elements_tracker		elements_tracker;
 }	t_cub;
 
 #endif

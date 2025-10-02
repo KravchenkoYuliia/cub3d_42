@@ -6,7 +6,7 @@
 /*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 19:15:55 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/02 14:27:51 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/02 15:05:06 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 # define WRONG_EXTENSION "Error\nWrong extension for file with texture\n"
 # define MAP_PLACING "Error\nMap has to be placed at the end of a file\n"
 # define WRONG_COLOR_FORMAT "Error\nWrong color format for map\n"
-# define DOUBLE_ELEMENT "Error\nOne or more elements were given twice in file.cub\n"
+# define DOUBLE_ELEMENT "Error\nOne or more elements are twice in file.cub\n"
 # define ELEMENT_MISSING "Error\nOne or more elements are missing in file.cub\n"
 
 #endif

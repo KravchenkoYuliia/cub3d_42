@@ -6,13 +6,14 @@
 /*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 13:21:04 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/02 14:28:20 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/02 15:02:26 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-static void	ft_fill_direction_structure(t_cub *cub, int elements_tracker, char **path_to_texture)
+static void	ft_fill_direction_structure(t_cub *cub,
+		int elements_tracker, char **path_to_texture)
 {
 	if (elements_tracker == TAKEN)
 		ft_fatal_error_in_parsing(DOUBLE_ELEMENT, cub);
@@ -27,22 +28,26 @@ void	ft_choose_direction_if_texture(t_cub *cub)
 {
 	if (cub->type == 'N')
 	{
-		ft_fill_direction_structure(cub, cub->elements_tracker.north, &cub->north.path);
+		ft_fill_direction_structure(cub, cub->elements_tracker.north,
+			&cub->north.path);
 		cub->elements_tracker.north = TAKEN;
 	}
 	else if (cub->type == 'S')
 	{
-		ft_fill_direction_structure(cub, cub->elements_tracker.south, &cub->south.path);
+		ft_fill_direction_structure(cub, cub->elements_tracker.south,
+			&cub->south.path);
 		cub->elements_tracker.south = TAKEN;
 	}
 	else if (cub->type == 'E')
 	{
-		ft_fill_direction_structure(cub, cub->elements_tracker.east, &cub->east.path);
+		ft_fill_direction_structure(cub, cub->elements_tracker.east,
+			&cub->east.path);
 		cub->elements_tracker.east = TAKEN;
 	}
 	else if (cub->type == 'W')
 	{
-		ft_fill_direction_structure(cub, cub->elements_tracker.west, &cub->west.path);
+		ft_fill_direction_structure(cub, cub->elements_tracker.west,
+			&cub->west.path);
 		cub->elements_tracker.west = TAKEN;
 	}
 }

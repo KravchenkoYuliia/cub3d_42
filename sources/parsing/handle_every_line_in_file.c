@@ -6,7 +6,7 @@
 /*   By: yukravch <yukravch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 17:50:34 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/02 14:30:11 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/02 15:03:01 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ static void	ft_check_line(t_cub *cub)
 static void	ft_put_line_to_struct(t_cub *cub)
 {
 	ft_choose_direction_if_texture(cub);
-        cub->elements_tracker.floor = TAKEN;
-        cub->elements_tracker.ceiling = TAKEN;
-        cub->elements_tracker.map = TAKEN;
+	cub->elements_tracker.floor = TAKEN;
+	cub->elements_tracker.ceiling = TAKEN;
+	cub->elements_tracker.map = TAKEN;
 //	ft_choose_surface_if_color(cub);
 }	
 
