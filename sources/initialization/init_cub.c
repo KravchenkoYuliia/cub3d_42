@@ -6,11 +6,19 @@
 /*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 12:20:00 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/02 13:05:40 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/02 14:12:43 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
+
+static void	ft_init_texture_paths(t_cub *cub)
+{
+	cub->north.path = NULL;
+	cub->south.path = NULL;
+	cub->east.path = NULL;
+	cub->west.path = NULL;
+}
 
 static void	ft_init_elements_tracker(t_cub *cub)
 {
@@ -20,6 +28,7 @@ static void	ft_init_elements_tracker(t_cub *cub)
 	cub->elements_tracker.west = FREE;
 	cub->elements_tracker.floor = FREE;
 	cub->elements_tracker.ceiling = FREE;
+	cub->elements_tracker.map = FREE;
 }
 
 t_cub	*ft_init_cub(void)
@@ -31,5 +40,6 @@ t_cub	*ft_init_cub(void)
 		exit(EXIT_FAILURE);
 	cub->surface_color = NULL;
 	ft_init_elements_tracker(cub);
+	ft_init_texture_paths(cub);
 	return (cub);
 }

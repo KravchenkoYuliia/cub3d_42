@@ -39,6 +39,8 @@ ${SRC_DIR}/parsing/read_descriptional_file.c \
 ${SRC_DIR}/parsing/handle_every_line_in_file.c \
 ${SRC_DIR}/parsing/check_texture.c \
 ${SRC_DIR}/parsing/check_rgb_colors.c \
+${SRC_DIR}/parsing/fill_structures.c \
+${SRC_DIR}/parsing/check_structures.c \
 ${SRC_DIR}/initialization/init_cub.c \
 ${SRC_DIR}/initialization/init_mlx.c \
 ${SRC_DIR}/hooks/hook.c \

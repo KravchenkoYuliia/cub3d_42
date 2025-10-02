@@ -6,11 +6,23 @@
 /*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 17:02:57 by yukravch          #+#    #+#             */
-/*   Updated: 2025/09/30 16:52:26 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/02 13:47:52 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
+
+static void	ft_free_paths_to_textures(t_cub *cub)
+{
+	if (cub->north.path)
+		free(cub->north.path);
+	if (cub->south.path)
+		free(cub->south.path);
+	if (cub->east.path)
+		free(cub->east.path);
+	if (cub->west.path)
+		free(cub->west.path);
+}
 
 int	ft_free_all_and_exit(t_cub *cub)
 {
@@ -27,8 +39,7 @@ int	ft_free_all_and_exit(t_cub *cub)
 			}
 			free(cub->mlx);
 		}
-		if (cub->north.path)
-			free(cub->north.path);
+		ft_free_paths_to_textures(cub);
 		free(cub);
 	}
 	exit(EXIT_SUCCESS);

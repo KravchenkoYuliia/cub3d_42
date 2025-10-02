@@ -6,7 +6,7 @@
 /*   By: yukravch <yukravch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 17:50:34 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/02 13:12:16 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/02 14:02:28 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,18 +36,9 @@ static void	ft_check_line(t_cub *cub)
 
 static void	ft_put_line_to_struct(t_cub *cub)
 {
-	if (cub->type == 'N')
-	{
-		if (cub->elements_tracker.north == TAKEN)
-			ft_fatal_error_in_parsing(DOUBLE_ELEMENT, cub);
-		cub->elements_tracker.north = TAKEN;
-		cub->north.path = calloc(ft_strlen(cub->elements_of_line[1])
-				+ 1, sizeof(char));
-		if (!cub->north.path)
-			ft_fatal_error_in_parsing(DOUBLE_ELEMENT, cub);
-		ft_strcpy(cub->north.path, cub->elements_of_line[1]);
-		printf("Put N to struct north successfully\npath = '%s'", cub->north.path);
-	}
+	ft_choose_direction_if_texture(cub);
+//	ft_choose_surface_if_color(cub);
+	ft_check_if_all_elements_are_in_file(cub);
 }	
 
 void	ft_handle_every_line(t_cub *cub)
