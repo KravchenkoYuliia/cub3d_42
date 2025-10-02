@@ -6,7 +6,7 @@
 /*   By: yukravch <yukravch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 17:46:13 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/02 14:03:55 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/02 16:02:45 by jgossard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,8 @@
 # include "mlx.h"
 # include "mlx_int.h"
 # include "errors.h"
+# include "variables.h"
 # include "structure.h"
-
-# define WIN_WIDTH 2560 //TODO adapter a chaque ecran
-# define WIN_HEIGHT 1440 //TODO adapter a chaque ecran
-
-# define ESC_BUTTON 65307
 
 //INITIALIZATION
 t_cub	*ft_init_cub(void);
