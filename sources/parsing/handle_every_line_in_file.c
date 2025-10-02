@@ -6,7 +6,7 @@
 /*   By: yukravch <yukravch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 17:50:34 by yukravch          #+#    #+#             */
-/*   Updated: 2025/09/30 17:10:40 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/02 13:12:16 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,16 +38,15 @@ static void	ft_put_line_to_struct(t_cub *cub)
 {
 	if (cub->type == 'N')
 	{
-		if (cub->no_doubles.north == TAKEN)
-			ft_errormsg_free_parsing_free_all_exit(DOUBLE_ELEMENT, cub);
-		cub->no_doubles.north = TAKEN;
-		cub->north.direction = NORTH;
+		if (cub->elements_tracker.north == TAKEN)
+			ft_fatal_error_in_parsing(DOUBLE_ELEMENT, cub);
+		cub->elements_tracker.north = TAKEN;
 		cub->north.path = calloc(ft_strlen(cub->elements_of_line[1])
 				+ 1, sizeof(char));
 		if (!cub->north.path)
-			ft_errormsg_free_parsing_free_all_exit(DOUBLE_ELEMENT, cub);
+			ft_fatal_error_in_parsing(DOUBLE_ELEMENT, cub);
 		ft_strcpy(cub->north.path, cub->elements_of_line[1]);
-		printf("Put N to struct north successfully\npath = '%s', direction = '%d'\n", cub->north.path, cub->north.direction);
+		printf("Put N to struct north successfully\npath = '%s'", cub->north.path);
 	}
 }	
 
@@ -63,7 +62,7 @@ void	ft_handle_every_line(t_cub *cub)
 	ft_cut_new_line_at_the_end(cub->line);
 	cub->elements_of_line = ft_split(cub->line, ' ');
 	if (!cub->elements_of_line)
-		ft_errormsg_free_parsing_free_all_exit(NULL, cub);
+		ft_fatal_error_in_parsing(NULL, cub);
 	ft_check_line(cub);
 	ft_put_line_to_struct(cub);
 	ft_free_char_tab(cub->elements_of_line);

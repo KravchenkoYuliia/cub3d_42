@@ -42,7 +42,7 @@ ${SRC_DIR}/parsing/check_rgb_colors.c \
 ${SRC_DIR}/initialization/init_cub.c \
 ${SRC_DIR}/initialization/init_mlx.c \
 ${SRC_DIR}/hooks/hook.c \
-${SRC_DIR}/utils/basic_functions.c \
+${SRC_DIR}/utils/string_utils.c \
 ${SRC_DIR}/utils/check_file_extension.c \
 $(SRC_DIR)/the_end/error_in_parsing_free_exit.c \
 ${SRC_DIR}/the_end/free_all_and_exit.c

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   error_in_parsing_free_exit.c                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: yukravch <yukravch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 14:22:17 by yukravch          #+#    #+#             */
-/*   Updated: 2025/09/30 17:03:11 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/02 13:12:16 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	ft_errormsg_free_parsing_free_all_exit(char *msg, t_cub *cub)
+void	ft_fatal_error_in_parsing(char *msg, t_cub *cub)
 {
 	if (cub)
 	{

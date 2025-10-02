@@ -6,7 +6,7 @@
 /*   By: yukravch <yukravch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 18:14:27 by yukravch          #+#    #+#             */
-/*   Updated: 2025/09/30 17:13:31 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/02 13:07:44 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ typedef enum e_button {
 }	t_button;
 
 typedef struct s_texture {
-	t_direction	direction;
 	char		*path;
 }	t_texture;
 
@@ -73,14 +72,14 @@ typedef struct s_map {
 	t_point	**grid;
 }	t_map;
 
-typedef struct s_no_doubles {
+typedef struct s_elements_tracker {
 	int	north;
 	int	south;
 	int	east;
 	int	west;
 	int	floor;
 	int	ceiling;
-}	t_no_doubles;
+}	t_elements_tracker;
 
 typedef struct s_cub {
 	t_map					*map;
@@ -99,7 +98,7 @@ typedef struct s_cub {
 	char					*line;
 	char					**elements_of_line;
 	t_elements_of_parsing	type;
-	t_no_doubles			no_doubles;
+	t_elements_tracker			elements_tracker;
 }	t_cub;
 
 #endif
