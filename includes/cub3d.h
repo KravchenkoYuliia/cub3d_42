@@ -6,7 +6,7 @@
 /*   By: yukravch <yukravch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 17:46:13 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/02 16:02:45 by jgossard         ###   ########.fr       */
+/*   Updated: 2025/10/02 17:10:02 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ void	ft_check_texture(t_cub *cub);
 void	ft_check_rgb_colors(t_cub *cub);
 void	ft_read_fd_till_the_end(int fd);
 void	ft_choose_direction_if_texture(t_cub *cub);
+void	ft_choose_surface_if_color(t_cub *cub);
 void	ft_check_if_all_elements_are_in_file(t_cub *cub);
 
 //EVENT

@@ -6,7 +6,7 @@
 /*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 17:02:57 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/02 13:47:52 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/02 17:12:52 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,18 @@ static void	ft_free_paths_to_textures(t_cub *cub)
 		free(cub->east.path);
 	if (cub->west.path)
 		free(cub->west.path);
+}
+
+static void	ft_free_colors(t_cub *cub)
+{
+	if (cub->surface_color)
+	{
+		if (cub->surface_color[0].colors)
+			free(cub->surface_color[0].colors);
+		if (cub->surface_color[1].colors)
+			free(cub->surface_color[1].colors);
+		free(cub->surface_color);
+	}
 }
 
 int	ft_free_all_and_exit(t_cub *cub)
@@ -40,6 +52,7 @@ int	ft_free_all_and_exit(t_cub *cub)
 			free(cub->mlx);
 		}
 		ft_free_paths_to_textures(cub);
+		ft_free_colors(cub);
 		free(cub);
 	}
 	exit(EXIT_SUCCESS);

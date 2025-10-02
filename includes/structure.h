@@ -6,7 +6,7 @@
 /*   By: yukravch <yukravch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 18:14:27 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/02 15:04:19 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/02 17:01:40 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,18 +24,20 @@ typedef enum e_elements_of_parsing {
 	F = 'F',
 	C = 'C',
 }	t_elements_of_parsing;
-
+/*
 typedef enum e_direction {
 	NORTH = 'N',
 	SOUTH = 'S',
 	WEST = 'W',
 	EAST = 'E',
 }	t_direction;
-
+*/
+/*
 typedef enum e_surface_type {
 	SURFACE_FLOOR = 'F',
 	SURFACE_CEILING = 'C',
 }	t_surface_type;
+*/
 
 typedef enum e_button {
 	BUTTON_W,
@@ -51,8 +53,8 @@ typedef struct s_texture {
 }	t_texture;
 
 typedef struct s_surface_color {
-	t_surface_type	surface_type;
-	int				*colors;
+	int	surface_type;
+	int	*colors;
 }	t_surface_color;
 /*
 typedef struct s_point {
@@ -92,7 +94,8 @@ typedef struct s_cub {
 	t_texture				east;
 	t_texture				west;
 
-	t_surface_color			*surface_color;
+	t_surface_color			*surface_color; //surface_color[0] = Floor; 
+							//surface_color[1] = Ceiling
 	t_mlx					*mlx;
 
 // PARSING

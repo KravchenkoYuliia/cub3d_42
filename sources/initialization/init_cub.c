@@ -6,7 +6,7 @@
 /*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 12:20:00 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/02 14:12:43 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/02 17:16:36 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 static void	ft_init_texture_paths(t_cub *cub)
 {
+	if (!cub)
+		exit(EXIT_FAILURE);
 	cub->north.path = NULL;
 	cub->south.path = NULL;
 	cub->east.path = NULL;
@@ -21,7 +23,9 @@ static void	ft_init_texture_paths(t_cub *cub)
 }
 
 static void	ft_init_elements_tracker(t_cub *cub)
-{
+{	
+	if (!cub)
+		exit(EXIT_FAILURE);
 	cub->elements_tracker.north = FREE;
 	cub->elements_tracker.south = FREE;
 	cub->elements_tracker.east = FREE;
@@ -29,6 +33,25 @@ static void	ft_init_elements_tracker(t_cub *cub)
 	cub->elements_tracker.floor = FREE;
 	cub->elements_tracker.ceiling = FREE;
 	cub->elements_tracker.map = FREE;
+}
+
+static void	ft_init_surface_color(t_cub *cub)
+{
+	int	i;
+
+	i = 0;
+	if (!cub)
+		exit(EXIT_FAILURE);
+	cub->surface_color = calloc(2, sizeof(t_surface_color)); //size 2: Floor and Ceiling
+	if (!cub->surface_color)
+		ft_free_all_and_exit(cub);
+	while (i < 2)
+	{
+		cub->surface_color[i].colors = calloc(3, sizeof(int)); // 3 = RGB
+		if (!cub->surface_color[i].colors)
+			ft_free_all_and_exit(cub);
+		i++;
+	}
 }
 
 t_cub	*ft_init_cub(void)
@@ -41,5 +64,6 @@ t_cub	*ft_init_cub(void)
 	cub->surface_color = NULL;
 	ft_init_elements_tracker(cub);
 	ft_init_texture_paths(cub);
+	ft_init_surface_color(cub);
 	return (cub);
 }
