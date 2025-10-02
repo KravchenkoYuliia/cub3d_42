@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   variables.h                                        :+:      :+:    :+:   */
+/*   ft_draw_pixel.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/02 15:05:00 by jgossard          #+#    #+#             */
-/*   Updated: 2025/10/02 17:32:50 by jgossard         ###   ########.fr       */
+/*   Created: 2025/10/01 14:57:03 by jgossard          #+#    #+#             */
+/*   Updated: 2025/10/01 15:00:53 by jgossard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef VARIABLES_H
-# define VARIABLES_H
+#include "cub3d.h"
 
-/* WINDOW SIZE */
+void	ft_draw_pixel(t_image *image, int x, int y, int color)
+{
+	char	*dst;
 
-# define WIN_WIDTH 2560 //TODO adapter a chaque ecran
-# define WIN_HEIGHT 1440 //TODO adapter a chaque ecran
+	if (x > WIN_WIDTH || y > WIN_HEIGHT || x < 0 || y < 0)
+		return ;
+	dst = image->addr + ((y * image->line_len) + (x * (image->bpp / 8)));
+	*(unsigned int *)(dst) = color;
+}
 
-/* KEYBOARD KEY */
-
-# define ESC_BUTTON 65307
-
-/* DRAWING */
-
-# define TILE_CENTER_OFFSET 0.5
-# define FOV_SCALE 0.66
-# define SPACE " "
-
-#endif

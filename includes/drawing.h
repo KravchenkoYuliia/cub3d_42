@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   variables.h                                        :+:      :+:    :+:   */
+/*   drawing.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/02 15:05:00 by jgossard          #+#    #+#             */
-/*   Updated: 2025/10/02 17:32:50 by jgossard         ###   ########.fr       */
+/*   Created: 2025/09/28 22:45:57 by jgossard          #+#    #+#             */
+/*   Updated: 2025/10/02 11:13:36 by jgossard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef VARIABLES_H
-# define VARIABLES_H
+#ifndef DRAWING_H
+# define DRAWING_H
 
-/* WINDOW SIZE */
+void	ft_render_and_display_image(t_cub *data);
 
-# define WIN_WIDTH 2560 //TODO adapter a chaque ecran
-# define WIN_HEIGHT 1440 //TODO adapter a chaque ecran
+void	ft_draw_ceiling(t_img *img, int color);
+void	ft_draw_floor(t_img *img, int color);
 
-/* KEYBOARD KEY */
+/* UTILS */
 
-# define ESC_BUTTON 65307
+void	ft_draw_pixel(t_image *image, int x, int y, int color);
+int		get_texture_pixel(t_texture_image *texture, int x, int y);
 
-/* DRAWING */
-
-# define TILE_CENTER_OFFSET 0.5
-# define FOV_SCALE 0.66
-# define SPACE " "
-
-#endif
+# endif

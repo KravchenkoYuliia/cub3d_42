@@ -1,31 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   variables.h                                        :+:      :+:    :+:   */
+/*   raycasting.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/02 15:05:00 by jgossard          #+#    #+#             */
-/*   Updated: 2025/10/02 17:32:50 by jgossard         ###   ########.fr       */
+/*   Created: 2025/10/01 14:51:38 by jgossard          #+#    #+#             */
+/*   Updated: 2025/10/01 14:55:08 by jgossard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef VARIABLES_H
-# define VARIABLES_H
+#include "cub3d.h"
 
-/* WINDOW SIZE */
-
-# define WIN_WIDTH 2560 //TODO adapter a chaque ecran
-# define WIN_HEIGHT 1440 //TODO adapter a chaque ecran
-
-/* KEYBOARD KEY */
-
-# define ESC_BUTTON 65307
-
-/* DRAWING */
-
-# define TILE_CENTER_OFFSET 0.5
-# define FOV_SCALE 0.66
-# define SPACE " "
-
-#endif
+void	ft_raycating(t_cub *data)
+{
+	
+}

@@ -15,7 +15,7 @@
 ### Verif file
 - [] check that the program only has 1 argument ✅
 - [] check that we are using a `.cub` file ✅
-- [] check if file is empty 
+- [] check if file is empty
 	- [] if there is nothing inside ✅
 	- [] if there only are spaces/tabs/new_lines:
 		read lines with get next line -> check it -> put it to struct and 
@@ -55,13 +55,26 @@
 - [] TODO check this line "the management of your window must remain smooth: changing to another win-
 dow, minimizing, etc."
 
-## Ray Casting
+## Input Handling
 
-- [] TODO read smth about it
+- [] Movement keys
+	- [] W : move forward
+	- [] S : move backward
+	- [] A : move left
+	- [] D : move right
+- [] Camera Keys
+	- [] left arrow: rotate camera left
+	- [] right arrow: rotate camera right
+- Built image and apply it to the window
 
+## Raycasting Engine
 
-> test qqch important
+For each vertical stripe on screen:
+- [] Calculate ray direction based on player direction and camera plane
+- [] Find which grid square the ray hits (DDA algorithm)
+- [] Calculate distance to wall hit to determine wall height
+- [] Draw vertical line on screen representing the wall slice (based on distance)
 
-```C
-int	i = 0;
-```
+Handle:
+- [] Wall collision detection (to prevent walking through walls)
+- [] Texture mapping on walls

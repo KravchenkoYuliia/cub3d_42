@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   variables.h                                        :+:      :+:    :+:   */
+/*   ft_draw_floor.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/02 15:05:00 by jgossard          #+#    #+#             */
-/*   Updated: 2025/10/02 17:32:50 by jgossard         ###   ########.fr       */
+/*   Created: 2025/10/01 15:17:08 by jgossard          #+#    #+#             */
+/*   Updated: 2025/10/02 15:37:28 by jgossard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef VARIABLES_H
-# define VARIABLES_H
+#include "cub3d.h"
 
-/* WINDOW SIZE */
+void	ft_draw_floor(t_image *img, int color)
+{
+	int	x;
+	int	y;
 
-# define WIN_WIDTH 2560 //TODO adapter a chaque ecran
-# define WIN_HEIGHT 1440 //TODO adapter a chaque ecran
-
-/* KEYBOARD KEY */
-
-# define ESC_BUTTON 65307
-
-/* DRAWING */
-
-# define TILE_CENTER_OFFSET 0.5
-# define FOV_SCALE 0.66
-# define SPACE " "
-
-#endif
+	if (!img || color < 0)
+		return ;
+	y = WIN_HEIGHT / 2;
+	while (y < WIN_HEIGHT)
+	{
+		x = 0;
+		while (x < WIN_WIDTH)
+		{
+			ft_draw_pixel(x, y, img, color);
+			x++;
+		}
+		y++;
+	}
+}
