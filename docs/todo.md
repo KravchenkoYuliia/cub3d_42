@@ -43,7 +43,8 @@
 
 ### Verif map
 
-- [] Check that we only have `1`, `0`, `N`, `S`,`E`, `W` ✅
+- [] no empty lines in map ✅
+- [] Check that we only have `1`, `0`, `N`, `S`,`E`, `W`, SPACE ✅
 - [] Check that the map is closed with walls `1`
 - [] check that there is only 1 player (letter on the map)
 	- [] if no player or more that 1 - error msg

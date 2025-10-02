@@ -6,7 +6,7 @@
 /*   By: yukravch <yukravch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/26 13:43:09 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/02 13:12:16 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/02 19:11:53 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,6 @@ static void	ft_loop_for_every_nb(t_cub *cub, char **rgb)
 	i = 0;
 	while (rgb[i])
 	{
-		if (rgb[i][0] && rgb[i][1] && rgb[i][2] && rgb[i][3])
-		{
-			ft_free_char_tab(rgb);
-			ft_fatal_error_in_parsing(WRONG_COLOR_FORMAT, cub);
-		}
 		if (ft_isdigit_check_str(rgb[i]) == false)
 		{
 			ft_free_char_tab(rgb);

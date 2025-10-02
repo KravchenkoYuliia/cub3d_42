@@ -6,7 +6,7 @@
 /*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 14:03:15 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/02 14:35:25 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/02 18:56:33 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,9 @@ void	ft_check_if_all_elements_are_in_file(t_cub *cub)
 
 	i = 0;
 	ft_fill_elements_tracker(cub, elements_tracker);
-	while (i < 7) //there are 7 elements in the map(4 directions, 2 colors, 1 map)
+	while (i < 7)
 	{
+		//there are 7 elements in the map(4 directions, 2 colors, 1 map)
 		if (elements_tracker[i] != TAKEN)
 		{
 			write(STDERR_FILENO, ELEMENT_MISSING, ft_strlen(ELEMENT_MISSING));

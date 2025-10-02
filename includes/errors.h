@@ -6,7 +6,7 @@
 /*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 19:15:55 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/02 18:09:37 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/02 18:43:33 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@
 # define ELEMENT_MISSING "Error\nOne or more elements are missing in file.cub\n"
 # define EMPTY_LINE_IN_MAP "Error\nEmpty line in map\n"
 # define MAP_NOT_CLOSED "Error\nMap is not closed with 1\n"
+# define INVALID_CHAR_IN_MAP "Error\nMap only can have 1, 0, N, S, E, W, space\n"
 
 #endif
