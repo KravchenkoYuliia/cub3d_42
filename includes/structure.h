@@ -6,7 +6,7 @@
 /*   By: yukravch <yukravch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 18:14:27 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/02 14:12:22 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/02 14:48:38 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,14 +54,14 @@ typedef struct s_surface_color {
 	t_surface_type	surface_type;
 	int				*colors;
 }	t_surface_color;
-
+/*
 typedef struct s_point {
 	int	x;
 	int	y;
 	int	z;
 	int	color; //TODO utile?
 }	t_point;
-
+*/
 typedef struct s_mlx {
 	void	*ptr;
 	void	*win;
@@ -69,7 +69,7 @@ typedef struct s_mlx {
 }	t_mlx;
 
 typedef struct s_map {
-	t_point	**grid;
+	char	**grid;
 	int	width;
 	int	height;
 }	t_map;

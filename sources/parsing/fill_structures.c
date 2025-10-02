@@ -6,7 +6,7 @@
 /*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 13:21:04 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/02 13:58:30 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/02 14:28:20 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,16 +33,16 @@ void	ft_choose_direction_if_texture(t_cub *cub)
 	else if (cub->type == 'S')
 	{
 		ft_fill_direction_structure(cub, cub->elements_tracker.south, &cub->south.path);
-		cub->elements_tracker.north = TAKEN;
+		cub->elements_tracker.south = TAKEN;
 	}
 	else if (cub->type == 'E')
 	{
 		ft_fill_direction_structure(cub, cub->elements_tracker.east, &cub->east.path);
-		cub->elements_tracker.north = TAKEN;
+		cub->elements_tracker.east = TAKEN;
 	}
 	else if (cub->type == 'W')
 	{
 		ft_fill_direction_structure(cub, cub->elements_tracker.west, &cub->west.path);
-		cub->elements_tracker.north = TAKEN;
+		cub->elements_tracker.west = TAKEN;
 	}
 }
