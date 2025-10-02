@@ -6,7 +6,7 @@
 /*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 19:15:55 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/02 15:05:06 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/02 18:09:37 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,7 @@
 # define WRONG_COLOR_FORMAT "Error\nWrong color format for map\n"
 # define DOUBLE_ELEMENT "Error\nOne or more elements are twice in file.cub\n"
 # define ELEMENT_MISSING "Error\nOne or more elements are missing in file.cub\n"
+# define EMPTY_LINE_IN_MAP "Error\nEmpty line in map\n"
+# define MAP_NOT_CLOSED "Error\nMap is not closed with 1\n"
 
 #endif

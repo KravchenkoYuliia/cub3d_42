@@ -6,7 +6,7 @@
 /*   By: yukravch <yukravch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 17:50:34 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/02 17:15:33 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/02 18:21:59 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,7 @@ static void	ft_check_line(t_cub *cub)
 	}
 	else
 	{
-		printf("checking map\n");
-		//ft_check_map(line);
+		ft_check_map(cub);
 		cub->map_flag = true;
 		cub->type = MAP;
 	}
@@ -38,17 +37,16 @@ static void	ft_put_line_to_struct(t_cub *cub)
 {
 	ft_choose_direction_if_texture(cub);
 	ft_choose_surface_if_color(cub);
-	
-	
+	ft_free_char_tab(cub->elements_of_line);
 	cub->elements_tracker.map = TAKEN;
-//	ft_choose_surface_if_color(cub);
 }	
 
 void	ft_handle_every_line(t_cub *cub)
 {
 	if (!cub)
 		exit(EXIT_FAILURE);
-	if (ft_line_only_has_whitespaces(cub->line) == true)
+	if (ft_line_only_has_whitespaces(cub->line) == true
+		&& cub->map_flag == false)
 	{
 		free(cub->line);
 		return ;
@@ -59,6 +57,5 @@ void	ft_handle_every_line(t_cub *cub)
 		ft_fatal_error_in_parsing(NULL, cub);
 	ft_check_line(cub);
 	ft_put_line_to_struct(cub);
-	ft_free_char_tab(cub->elements_of_line);
 	free(cub->line);
 }

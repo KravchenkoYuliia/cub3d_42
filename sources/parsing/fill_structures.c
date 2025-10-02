@@ -6,7 +6,7 @@
 /*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 13:21:04 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/02 17:22:20 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/02 18:21:42 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	ft_choose_direction_if_texture(t_cub *cub)
 static void	ft_fill_color_structure(t_cub *cub,
 		int elements_tracker, int *colors)
 {
-	int	i;
+	int		i;
 	char	**numbers;
 
 	if (elements_tracker == TAKEN)
