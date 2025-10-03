@@ -6,7 +6,7 @@
 /*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 12:20:00 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/02 18:55:56 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/03 11:42:35 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,14 @@ static void	ft_init_surface_color(t_cub *cub)
 	}
 }
 
+static void	ft_init_map_parsing(t_cub *cub)
+{
+	cub->line_counter = 0;
+	cub->map_first_line = 0;
+	cub->map_line_counter = 0;
+	cub->map_longest_line = 0;
+}
+
 t_cub	*ft_init_cub(void)
 {
 	t_cub	*cub;
@@ -66,5 +74,6 @@ t_cub	*ft_init_cub(void)
 	ft_init_elements_tracker(cub);
 	ft_init_texture_paths(cub);
 	ft_init_surface_color(cub);
+	ft_init_map_parsing(cub);
 	return (cub);
 }

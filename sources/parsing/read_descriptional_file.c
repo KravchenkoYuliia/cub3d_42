@@ -6,7 +6,7 @@
 /*   By: yukravch <yukravch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 12:19:02 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/02 14:30:31 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/03 12:01:14 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,11 @@ void	ft_parsing(t_cub *cub, char *descriptional_file)
 			}
 			break ;
 		}
+		cub->line_counter++;
 		first_time = false;
 		ft_handle_every_line(cub);
 	}
+	close(cub->fd);
 	ft_check_if_all_elements_are_in_file(cub);
+	//to do fill struct for map
 }

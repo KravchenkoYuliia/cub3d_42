@@ -6,7 +6,7 @@
 /*   By: yukravch <yukravch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 17:50:34 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/02 18:21:59 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/03 11:52:57 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ static void	ft_check_line(t_cub *cub)
 	else
 	{
 		ft_check_map(cub);
+		if (cub->map_flag == false)
+			cub->map_first_line = cub->line_counter;
 		cub->map_flag = true;
 		cub->type = MAP;
 	}
@@ -38,7 +40,13 @@ static void	ft_put_line_to_struct(t_cub *cub)
 	ft_choose_direction_if_texture(cub);
 	ft_choose_surface_if_color(cub);
 	ft_free_char_tab(cub->elements_of_line);
-	cub->elements_tracker.map = TAKEN;
+	if (cub->type == MAP)
+	{
+		cub->map_line_counter++;
+		cub->elements_tracker.map = TAKEN;
+		if (ft_strlen(cub->line) > cub->map_longest_line)
+			cub->map_longest_line = ft_strlen(cub->line);
+	}
 }	
 
 void	ft_handle_every_line(t_cub *cub)

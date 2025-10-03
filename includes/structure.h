@@ -6,7 +6,7 @@
 /*   By: yukravch <yukravch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 18:14:27 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/02 17:01:40 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/03 11:52:51 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,11 +100,16 @@ typedef struct s_cub {
 
 // PARSING
 	int						fd;
+	int						line_counter;
 	bool					map_flag;
 	char					*line;
 	char					**elements_of_line;
 	t_elements_of_parsing	type;
 	t_elements_tracker		elements_tracker;
+// MAP PARSING
+	int						map_first_line;
+	size_t						map_line_counter;
+	size_t						map_longest_line;
 }	t_cub;
 
 #endif
