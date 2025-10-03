@@ -6,7 +6,7 @@
 /*   By: yukravch <yukravch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 17:50:34 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/03 13:43:11 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/03 15:30:08 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,10 @@ void	ft_handle_every_line(t_cub *cub)
 	if (ft_line_only_has_whitespaces(cub->line) == true) //empty line
 	{
 		if (cub->map_flag == true && cub->map_is_finished == false)
+		{
 			cub->map_is_finished = true;
+			cub->map_last_line = cub->line_counter - 1;
+		}	
 		free(cub->line);
 		return ;
 	}

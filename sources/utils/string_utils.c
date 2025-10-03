@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   basic_functions.c                                  :+:      :+:    :+:   */
+/*   string_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 14:14:09 by yukravch          #+#    #+#             */
-/*   Updated: 2025/09/30 16:43:21 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/03 15:18:56 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_cut_new_line_at_the_end(char *line)
 	int	last_index;
 
 	last_index = ft_strlen(line) - 1;
-	if (last_index > 0 && line[last_index])
+	if (last_index > 0 && line[last_index] == '\n')
 		line[last_index] = '\0';
 }
 

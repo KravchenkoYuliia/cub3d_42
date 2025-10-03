@@ -6,16 +6,11 @@
 /*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 11:56:07 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/03 13:18:19 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/03 15:21:14 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
-
-static void	ft_put_line_to_map_grid(t_cub *cub)
-{
-	(void)cub;
-}
 
 void	ft_fill_map_structure(t_cub *cub, char *descriptional_file)
 {
@@ -23,18 +18,23 @@ void	ft_fill_map_structure(t_cub *cub, char *descriptional_file)
 
 	i = 0;
 	ft_init_map(cub);
-	cub->line_counter = 0;
+	cub->map_line_counter = 0;
 	ft_open_descriptional_file(cub, descriptional_file);
-	while (i < cub->nb_of_line_in_file)
+	while (i < cub->map_last_line)
 	{
 		cub->line = get_next_line(cub->fd);
 		if (!cub->line)
 			ft_fatal_error_in_parsing(NULL, cub);
-		cub->line_counter++;
-		if (cub->line_counter >= cub->map_first_line)
-			ft_put_line_to_map_grid(cub);
+		ft_cut_new_line_at_the_end(cub->line);
+		if (i + 1 >= cub->map_first_line)
+		{
+			ft_strcpy(cub->map.grid[cub->map_line_counter], cub->line);
+			cub->map_line_counter++;
+		}
 		free(cub->line);
 		i++;
 	}
+	cub->map.grid[cub->map_line_counter] = NULL;
+	ft_read_fd_till_the_end(cub->fd);
 	close(cub->fd);
 }

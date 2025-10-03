@@ -6,7 +6,7 @@
 /*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 17:29:48 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/03 13:43:53 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/03 15:31:23 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ static void	ft_check_line_only_has_valid_char(t_cub *cub)
 		if (ft_strchr(valid_chars, cub->line[i]) == NULL)
 		{
 			free(valid_chars);
-			printf("Char [%c][%d] found in map\n", cub->line[i], cub->line[i]);
+			printf("Char '%c'[ascii: %d] found in map\n",
+				cub->line[i], cub->line[i]);
 			ft_fatal_error_in_parsing(INVALID_CHAR_IN_MAP, cub);
 		}
 		i++;
@@ -38,8 +39,6 @@ static void	ft_check_line_only_has_valid_char(t_cub *cub)
 
 void	ft_check_map(t_cub *cub)
 {
-	//if (ft_line_only_has_whitespaces(cub->line) == true)
-	//	ft_fatal_error_in_parsing(EMPTY_LINE_IN_MAP, cub);
 	if (ft_line_has_no_1(cub->line) == true)
 		ft_fatal_error_in_parsing(INVALID_MAP, cub);
 	if (cub->map_is_finished == true)
