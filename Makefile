@@ -42,13 +42,16 @@ ${SRC_DIR}/parsing/check_rgb_colors.c \
 ${SRC_DIR}/parsing/check_rgb_colors.c \
 ${SRC_DIR}/parsing/check_map.c \
 ${SRC_DIR}/parsing/fill_structures.c \
+${SRC_DIR}/parsing/fill_map_structure.c \
 ${SRC_DIR}/parsing/check_structures.c \
 ${SRC_DIR}/initialization/init_cub.c \
 ${SRC_DIR}/initialization/init_mlx.c \
+${SRC_DIR}/initialization/init_map.c \
 ${SRC_DIR}/hooks/hook.c \
 ${SRC_DIR}/utils/string_utils.c \
 ${SRC_DIR}/utils/check_file_extension.c \
 ${SRC_DIR}/utils/string_of_map_utils.c \
+${SRC_DIR}/utils/fd_utils.c \
 $(SRC_DIR)/the_end/fatal_error_in_parsing.c \
 ${SRC_DIR}/the_end/free_all_and_exit.c
 

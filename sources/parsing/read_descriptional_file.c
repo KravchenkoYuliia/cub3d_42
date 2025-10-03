@@ -6,7 +6,7 @@
 /*   By: yukravch <yukravch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 12:19:02 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/03 12:01:14 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/03 13:07:22 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,6 @@ void	ft_read_fd_till_the_end(int fd)
 			break ;
 		free(line);
 	}
-}
-
-static void	ft_open_descriptional_file(t_cub *cub, char *file)
-{
-	cub->fd = -1;
-	cub->fd = open(file, O_RDONLY);
-	if (cub->fd == -1)
-		ft_fatal_error_in_parsing(CANT_OPEN, cub);
 }
 
 void	ft_parsing(t_cub *cub, char *descriptional_file)
@@ -60,6 +52,8 @@ void	ft_parsing(t_cub *cub, char *descriptional_file)
 		ft_handle_every_line(cub);
 	}
 	close(cub->fd);
+	cub->fd = -1;
+	cub->nb_of_line_in_file = cub->line_counter;
 	ft_check_if_all_elements_are_in_file(cub);
-	//to do fill struct for map
+	ft_fill_map_structure(cub, descriptional_file);
 }

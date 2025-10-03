@@ -6,7 +6,7 @@
 /*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 17:02:57 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/02 17:12:52 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/03 12:42:19 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,22 @@ static void	ft_free_colors(t_cub *cub)
 	}
 }
 
+static void ft_free_map(t_cub *cub)
+{
+	size_t	i;
+
+	i = 0;
+	if (cub->map.grid)
+	{
+		while (i < cub->map_line_counter && cub->map.grid[i])
+		{
+			free(cub->map.grid[i]);
+			i++;
+		}
+		free(cub->map.grid);
+	}
+}
+
 int	ft_free_all_and_exit(t_cub *cub)
 {
 	if (cub)
@@ -51,6 +67,7 @@ int	ft_free_all_and_exit(t_cub *cub)
 			}
 			free(cub->mlx);
 		}
+		ft_free_map(cub);
 		ft_free_paths_to_textures(cub);
 		ft_free_colors(cub);
 		free(cub);

@@ -6,7 +6,7 @@
 /*   By: yukravch <yukravch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 17:46:13 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/02 18:16:30 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/03 12:43:55 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@
 //INITIALIZATION
 t_cub	*ft_init_cub(void);
 void	ft_init_mlx(t_cub *cub);
+void    ft_init_map(t_cub *cub);
 
 //PARSING
 void	ft_check_args(int ac, char **av);
@@ -46,6 +47,7 @@ void	ft_read_fd_till_the_end(int fd);
 void	ft_choose_direction_if_texture(t_cub *cub);
 void	ft_choose_surface_if_color(t_cub *cub);
 void	ft_check_if_all_elements_are_in_file(t_cub *cub);
+void	ft_fill_map_structure(t_cub *cub, char *descriptional_file);
 
 //EVENT
 void	ft_hook(t_cub *cub);
@@ -57,6 +59,7 @@ bool	ft_line_only_has_whitespaces(char *line);
 bool	ft_check_file_extension(char *file_name, char *extension);
 char	*ft_strcpy(char *dest, char *src);
 bool	ft_line_has_no_1(char *line);
+void	ft_open_descriptional_file(t_cub *cub, char *file);
 
 //ERROR FREE EXIT
 void	ft_fatal_error_in_parsing(char *msg, t_cub *cub);

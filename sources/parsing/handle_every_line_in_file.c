@@ -6,7 +6,7 @@
 /*   By: yukravch <yukravch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 17:50:34 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/03 11:52:57 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/03 13:01:09 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ static void	ft_put_line_to_struct(t_cub *cub)
 	ft_choose_direction_if_texture(cub);
 	ft_choose_surface_if_color(cub);
 	ft_free_char_tab(cub->elements_of_line);
+	cub->elements_of_line = NULL;
 	if (cub->type == MAP)
 	{
 		cub->map_line_counter++;
@@ -53,8 +54,8 @@ void	ft_handle_every_line(t_cub *cub)
 {
 	if (!cub)
 		exit(EXIT_FAILURE);
-	if (ft_line_only_has_whitespaces(cub->line) == true
-		&& cub->map_flag == false)
+	if (ft_line_only_has_whitespaces(cub->line) == true)
+							     //&& cub->map_flag == false)
 	{
 		free(cub->line);
 		return ;

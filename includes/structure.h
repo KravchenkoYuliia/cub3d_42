@@ -6,7 +6,7 @@
 /*   By: yukravch <yukravch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 18:14:27 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/03 11:52:51 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/03 12:52:01 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ typedef struct s_elements_tracker {
 }	t_elements_tracker;
 
 typedef struct s_cub {
-	t_map					*map;
+	t_map					map;
 
 	t_texture				north;
 	t_texture				south;
@@ -101,6 +101,7 @@ typedef struct s_cub {
 // PARSING
 	int						fd;
 	int						line_counter;
+	int						nb_of_line_in_file;
 	bool					map_flag;
 	char					*line;
 	char					**elements_of_line;
