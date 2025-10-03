@@ -6,7 +6,7 @@
 /*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 19:15:55 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/03 11:31:43 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/03 16:28:20 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@
 # define EMPTY_LINE_IN_MAP "Error\nEmpty line in map\n"
 # define INVALID_MAP "Error\nMap is invalid\n"
 # define INVALID_CHAR_IN_MAP "Error\nMap only can have 1, 0, N, S, E, W, space\n"
+# define ONE_PLAYER "Error\nWrong number of players\n"
 
 #endif

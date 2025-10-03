@@ -6,7 +6,7 @@
 /*   By: yukravch <yukravch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 18:14:27 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/03 14:56:43 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/03 16:18:03 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,6 +113,7 @@ typedef struct s_cub {
 	size_t					map_line_counter;
 	size_t					map_longest_line;
 	bool					map_is_finished;
+	int					nb_of_players;					
 }	t_cub;
 
 #endif

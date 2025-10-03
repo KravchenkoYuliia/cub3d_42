@@ -6,7 +6,7 @@
 /*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 12:20:00 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/03 15:03:03 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/03 16:21:18 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ static void	ft_init_map_parsing(t_cub *cub)
 	cub->map_line_counter = 0;
 	cub->map_longest_line = 0;
 	cub->map_is_finished = false;
+	cub->nb_of_players = 0;
 }
 
 t_cub	*ft_init_cub(void)
