@@ -6,11 +6,18 @@
 /*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 12:22:09 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/03 12:44:53 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/03 13:53:04 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
+
+void	ft_init_before_new_reading_of_file(t_cub *cub)
+{
+	close(cub->fd);
+	cub->fd = -1;
+	cub->nb_of_line_in_file = cub->line_counter;
+}
 
 void	ft_init_map(t_cub *cub)
 {
@@ -29,5 +36,4 @@ void	ft_init_map(t_cub *cub)
 			ft_fatal_error_in_parsing(NULL, cub);
 		i++;
 	}
-
 }

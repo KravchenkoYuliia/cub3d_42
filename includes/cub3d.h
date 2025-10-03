@@ -6,7 +6,7 @@
 /*   By: yukravch <yukravch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 17:46:13 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/03 12:43:55 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/03 13:53:39 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@
 //INITIALIZATION
 t_cub	*ft_init_cub(void);
 void	ft_init_mlx(t_cub *cub);
-void    ft_init_map(t_cub *cub);
+void	ft_init_map(t_cub *cub);
+void	ft_init_before_new_reading_of_file(t_cub *cub);
 
 //PARSING
 void	ft_check_args(int ac, char **av);

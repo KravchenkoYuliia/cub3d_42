@@ -6,11 +6,16 @@
 /*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 11:56:07 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/03 13:09:23 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/03 13:18:19 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
+
+static void	ft_put_line_to_map_grid(t_cub *cub)
+{
+	(void)cub;
+}
 
 void	ft_fill_map_structure(t_cub *cub, char *descriptional_file)
 {
@@ -27,7 +32,7 @@ void	ft_fill_map_structure(t_cub *cub, char *descriptional_file)
 			ft_fatal_error_in_parsing(NULL, cub);
 		cub->line_counter++;
 		if (cub->line_counter >= cub->map_first_line)
-			printf("MAP\n");//to do: put this line to char** grid in t_map
+			ft_put_line_to_map_grid(cub);
 		free(cub->line);
 		i++;
 	}

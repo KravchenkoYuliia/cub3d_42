@@ -6,7 +6,7 @@
 /*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 17:02:57 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/03 12:42:19 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/03 13:47:02 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static void	ft_free_colors(t_cub *cub)
 	}
 }
 
-static void ft_free_map(t_cub *cub)
+static void	ft_free_map(t_cub *cub)
 {
 	size_t	i;
 
