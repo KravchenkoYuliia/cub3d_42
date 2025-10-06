@@ -6,7 +6,7 @@
 /*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 12:01:52 by jgossard          #+#    #+#             */
-/*   Updated: 2025/10/06 11:48:31 by jgossard         ###   ########.fr       */
+/*   Updated: 2025/10/06 15:33:15 by jgossard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,15 +117,11 @@ t_player	*ft_init_player(t_cub *data)
 	player = malloc(sizeof(t_player));
 	if (!player)
 		return (NULL);
-	if (!ft_get_player_position(&data->map, player))
-		return (NULL);
-	if (!ft_get_player_direction(&data->map, player))
-		return (NULL);
-	player->input.move_backward = false;
-	player->input.move_forward = false;
-	player->input.move_left = false;
-	player->input.move_right = false;
-	player->input.camera_turn_left = false;
-	player->input.camera_turn_right = false;
+	if (!ft_get_player_position(&data->map, player)
+			|| !ft_get_player_direction(&data->map, player))
+		return (free(player), NULL);
+	ft_memset(&player->input, 0, sizeof(t_input));
+	player->move_speed = DEFAULT_MOVE_SPEED;
+	player->rotate_speed = DEFAULT_ROTATE_SPEED;
 	return (player);
 }
