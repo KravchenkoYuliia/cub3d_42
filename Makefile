@@ -49,12 +49,14 @@ ${SRC_DIR}/initialization/init_mlx.c \
 ${SRC_DIR}/initialization/init_map.c \
 ${SRC_DIR}/initialization/init_player.c \
 ${SRC_DIR}/hooks/hook.c \
-${SRC_DIR}/utils/string_utils.c \
+${SRC_DIR}/utils/memory/fatal_error_in_parsing.c \
+${SRC_DIR}/utils/memory/free_all_and_exit.c \
+${SRC_DIR}/utils/memory/free_cub.c \
+${SRC_DIR}/utils/memory/free_map.c \
 ${SRC_DIR}/utils/check_file_extension.c \
 ${SRC_DIR}/utils/string_of_map_utils.c \
 ${SRC_DIR}/utils/fd_utils.c \
-$(SRC_DIR)/the_end/fatal_error_in_parsing.c \
-${SRC_DIR}/the_end/free_all_and_exit.c
+${SRC_DIR}/utils/string_utils.c \
 
 # Remove main.c from SRC_FILES to create a list of common files
 COMMON_FILES = $(filter-out $(SRC_DIR)/main.c, $(SRC_FILES))

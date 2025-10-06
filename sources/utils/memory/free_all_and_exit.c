@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   free_all_and_exit.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/22 17:44:37 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/06 11:05:58 by jgossard         ###   ########.fr       */
+/*   Created: 2025/09/22 17:02:57 by yukravch          #+#    #+#             */
+/*   Updated: 2025/10/03 14:41:46 by jgossard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int	main(int ac, char **av)
+int	ft_free_all_and_exit(t_cub *cub)
 {
-	t_cub	*cub;
-
-	ft_check_args(ac, av);
-	cub = ft_init_cub();
-	if (!cub)
-		exit(EXIT_FAILURE);
-	ft_parsing(cub, av[1]);
-	ft_init_mlx(cub);
+	if (cub)
+		ft_free_cub(cub);
+	exit(EXIT_SUCCESS);
 	return (0);
 }

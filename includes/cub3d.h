@@ -29,6 +29,7 @@
 # include "errors.h"
 # include "variables.h"
 # include "structure.h"
+# include "utils.h"
 
 //INITIALIZATION
 
@@ -53,19 +54,7 @@ void	ft_check_if_all_elements_are_in_file(t_cub *cub);
 void	ft_fill_map_structure(t_cub *cub, char *descriptional_file);
 
 //EVENT
-void	ft_hook(t_cub *cub);
 
-//UTILS
-bool	ft_checking_nb_of_elements_in_array(char **array, int expected_nb);
-void	ft_cut_new_line_at_the_end(char *line);
-bool	ft_line_only_has_whitespaces(char *line);
-bool	ft_check_file_extension(char *file_name, char *extension);
-char	*ft_strcpy(char *dest, char *src);
-bool	ft_line_has_no_1(char *line);
-void	ft_open_descriptional_file(t_cub *cub, char *file);
-
-//ERROR FREE EXIT
-void	ft_fatal_error_in_parsing(char *msg, t_cub *cub);
-int		ft_free_all_and_exit(t_cub *cub);
+void		ft_hook(t_cub *cub);
 
 #endif

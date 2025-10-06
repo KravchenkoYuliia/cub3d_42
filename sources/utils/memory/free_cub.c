@@ -1,17 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_all_and_exit.c                                :+:      :+:    :+:   */
+/*   free_cub.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 17:02:57 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/03 13:47:02 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/06 12:46:38 by jgossard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
+// TODO: set every element to NULL after freeing
 static void	ft_free_paths_to_textures(t_cub *cub)
 {
 	if (cub->north.path)
@@ -24,8 +25,14 @@ static void	ft_free_paths_to_textures(t_cub *cub)
 		free(cub->west.path);
 }
 
+// TODO: Set every element to NULL after freeing
+// TODO: Maybe use a while loop until NUM_SURFACE instead of using direct index
+// 	will make the function more agile in case if initialization change to more
+// 	surfaces
 static void	ft_free_colors(t_cub *cub)
 {
+	if (!cub)
+		return ;
 	if (cub->surface_color)
 	{
 		if (cub->surface_color[0].colors)
@@ -36,42 +43,44 @@ static void	ft_free_colors(t_cub *cub)
 	}
 }
 
-static void	ft_free_map(t_cub *cub)
+static void	ft_free_mlx(t_cub *cub)
 {
-	size_t	i;
-
-	i = 0;
-	if (cub->map.grid)
+	if (!cub)
+		return ;
+	if (cub->mlx)
 	{
-		while (i < cub->map_line_counter && cub->map.grid[i])
+		if (cub->mlx->win && cub->mlx->ptr)
 		{
-			free(cub->map.grid[i]);
-			i++;
+			mlx_destroy_window(cub->mlx->ptr, cub->mlx->win);
+			cub->mlx->win = NULL;
 		}
-		free(cub->map.grid);
+		if (cub->mlx->ptr)
+		{
+			mlx_destroy_display(cub->mlx->ptr);
+			free(cub->mlx->ptr);
+			cub->mlx->ptr = NULL;
+		}
+		free(cub->mlx);
+		cub->mlx = NULL;
 	}
 }
 
-int	ft_free_all_and_exit(t_cub *cub)
+static void	ft_free_player(t_cub *cub)
 {
-	if (cub)
-	{
-		if (cub->mlx)
-		{
-			if (cub->mlx->ptr)
-			{
-				if (cub->mlx->win)
-					mlx_destroy_window(cub->mlx->ptr, cub->mlx->win);
-				mlx_destroy_display(cub->mlx->ptr);
-				free(cub->mlx->ptr);
-			}
-			free(cub->mlx);
-		}
-		ft_free_map(cub);
-		ft_free_paths_to_textures(cub);
-		ft_free_colors(cub);
-		free(cub);
-	}
-	exit(EXIT_SUCCESS);
-	return (0);
+	if (!cub || !cub->player)
+		return ;
+	free(cub->player);
+	cub->player = NULL;
+}
+
+void	ft_free_cub(t_cub *cub)
+{
+	if (!cub)
+		return ;
+	ft_free_mlx(cub);
+	ft_free_map(cub);
+	ft_free_paths_to_textures(cub);
+	ft_free_colors(cub);
+	ft_free_player(cub);
+	free(cub);
 }

@@ -24,6 +24,8 @@
 
 /* DRAWING */
 
+# define NUM_SURFACES 2 // Floor and Ceiling
+# define RGB_SIZE 3
 # define TILE_CENTER_OFFSET 0.5
 # define FOV_SCALE 0.66
 # define SPACE " "

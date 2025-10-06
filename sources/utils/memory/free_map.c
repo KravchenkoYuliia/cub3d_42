@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   free_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/22 17:44:37 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/06 11:05:58 by jgossard         ###   ########.fr       */
+/*   Created: 2025/10/06 11:13:40 by yukravch          #+#    #+#             */
+/*   Updated: 2025/10/06 11:47:15 by jgossard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int	main(int ac, char **av)
+void	ft_free_map(t_cub *cub)
 {
-	t_cub	*cub;
+	size_t	i;
 
-	ft_check_args(ac, av);
-	cub = ft_init_cub();
-	if (!cub)
-		exit(EXIT_FAILURE);
-	ft_parsing(cub, av[1]);
-	ft_init_mlx(cub);
-	return (0);
+	i = 0;
+	if (cub->map.grid)
+	{
+		while (i < cub->map_line_counter && cub->map.grid[i])
+		{
+			free(cub->map.grid[i]);
+			i++;
+		}
+		free(cub->map.grid);
+	}
 }
