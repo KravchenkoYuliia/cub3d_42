@@ -27,7 +27,7 @@ IFLAGS =	-I $(LIBFT_DIR)/include \
 			-I $(GNL_DIR)/include \
 			-I $(MLX_LINUX_DIR) \
 			-I $(INCLUDE_DIR)
-MLX_FLAG = -lXext -lX11 -lz -ldl -lglfw
+MLX_FLAG = -lXext -lX11 -lz -ldl
 MATH_LIB_FLAG = -lm
 GFLAG = -g3
 CFLAGS = -Wall -Werror -Wextra $(IFLAGS)
@@ -70,8 +70,7 @@ CUB3D_STATIC_LIB = libcub3d.a
 
 
 VALG_FLAG	= valgrind --leak-check=full --show-leak-kinds=all \
-				--track-origins=yes --track-fds=yes --trace-children=yes \
-				--suppressions=./readline.supp
+				--track-origins=yes --track-fds=yes
 
 ################################## EXECUTABLE ##################################
 EXEC = cub3D
