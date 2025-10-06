@@ -6,7 +6,7 @@
 /*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 15:05:00 by jgossard          #+#    #+#             */
-/*   Updated: 2025/10/02 15:23:50 by jgossard         ###   ########.fr       */
+/*   Updated: 2025/10/06 12:22:01 by jgossard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 /* DRAWING */
 
 # define TILE_CENTER_OFFSET 0.5
-
+# define FOV_SCALE 0.66
 # define SPACE " "
 
 #endif

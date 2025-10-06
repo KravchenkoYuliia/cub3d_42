@@ -47,6 +47,7 @@ ${SRC_DIR}/parsing/check_structures.c \
 ${SRC_DIR}/initialization/init_cub.c \
 ${SRC_DIR}/initialization/init_mlx.c \
 ${SRC_DIR}/initialization/init_map.c \
+${SRC_DIR}/initialization/init_player.c \
 ${SRC_DIR}/hooks/hook.c \
 ${SRC_DIR}/utils/string_utils.c \
 ${SRC_DIR}/utils/check_file_extension.c \

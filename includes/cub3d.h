@@ -31,10 +31,12 @@
 # include "structure.h"
 
 //INITIALIZATION
-t_cub	*ft_init_cub(void);
-void	ft_init_mlx(t_cub *cub);
-void	ft_init_map(t_cub *cub);
-void	ft_init_before_new_reading_of_file(t_cub *cub);
+
+t_cub		*ft_init_cub(void);
+void		ft_init_mlx(t_cub *cub);
+void		ft_init_map(t_cub *cub);
+void		ft_init_before_new_reading_of_file(t_cub *cub);
+t_player	*ft_init_player(t_cub *data);
 
 //PARSING
 void	ft_check_args(int ac, char **av);
