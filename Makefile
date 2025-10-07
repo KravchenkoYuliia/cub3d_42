@@ -34,6 +34,7 @@ CFLAGS = -Wall -Werror -Wextra $(IFLAGS)
 
 ############################# INPUT & OBJECT FILES #############################
 SRC_FILES = ${SRC_DIR}/main.c \
+${SRC_DIR}/parsing/start_of_parsing.c \
 ${SRC_DIR}/parsing/checking/check_args.c \
 ${SRC_DIR}/parsing/read_descriptional_file.c \
 ${SRC_DIR}/parsing/handle_every_line_in_file.c \

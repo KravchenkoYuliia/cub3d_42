@@ -6,13 +6,13 @@
 /*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 14:03:15 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/02 18:56:33 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/07 15:16:57 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	ft_fill_elements_tracker(t_cub *cub, int elements_tracker[7])
+void	ft_fill_elements_tracker(t_cub *cub, int elements_tracker[NUM_OF_ELEMENTS_IN_FILE])
 {
 	elements_tracker[0] = cub->elements_tracker.north;
 	elements_tracker[1] = cub->elements_tracker.south;
@@ -26,13 +26,12 @@ void	ft_fill_elements_tracker(t_cub *cub, int elements_tracker[7])
 void	ft_check_if_all_elements_are_in_file(t_cub *cub)
 {
 	int	i;
-	int	elements_tracker[7];
+	int	elements_tracker[NUM_OF_ELEMENTS_IN_FILE];
 
 	i = 0;
 	ft_fill_elements_tracker(cub, elements_tracker);
-	while (i < 7)
+	while (i < NUM_OF_ELEMENTS_IN_FILE)
 	{
-		//there are 7 elements in the map(4 directions, 2 colors, 1 map)
 		if (elements_tracker[i] != TAKEN)
 		{
 			write(STDERR_FILENO, ELEMENT_MISSING, ft_strlen(ELEMENT_MISSING));

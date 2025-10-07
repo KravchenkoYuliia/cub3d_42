@@ -6,7 +6,7 @@
 /*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 11:03:08 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/07 12:23:58 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/07 15:11:45 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 void	ft_check_args(int ac, char **av);
 void	ft_parsing(t_cub *cub, char *descriptional_file);
+void	ft_reading_loop(t_cub *cub);
 void	ft_handle_every_line(t_cub *cub);
 bool	ft_this_is_texture(t_cub *cub);
 void	ft_check_texture(t_cub *cub);

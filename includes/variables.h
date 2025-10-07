@@ -6,7 +6,7 @@
 /*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 15:05:00 by jgossard          #+#    #+#             */
-/*   Updated: 2025/10/07 12:45:23 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/07 15:16:27 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,6 @@
 # define DEFAULT_ROTATE_SPEED 0.03
 # define SPACE ' '
 # define OUTSIDE_SPACE '+'
+# define NUM_OF_ELEMENTS_IN_FILE 7
 
 #endif
