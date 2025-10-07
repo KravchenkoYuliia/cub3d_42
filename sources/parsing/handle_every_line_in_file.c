@@ -6,7 +6,7 @@
 /*   By: yukravch <yukravch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 17:50:34 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/03 15:30:08 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/07 10:32:43 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ static void	ft_put_line_to_struct(t_cub *cub)
 
 void	ft_handle_every_line(t_cub *cub)
 {
+	printf("current line = '%s'\n", cub->line);
 	if (!cub)
 		exit(EXIT_FAILURE);
 	if (ft_line_only_has_whitespaces(cub->line) == true) //empty line

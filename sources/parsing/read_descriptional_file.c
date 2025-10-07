@@ -6,7 +6,7 @@
 /*   By: yukravch <yukravch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 12:19:02 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/03 15:08:28 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/07 10:35:42 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ void	ft_parsing(t_cub *cub, char *descriptional_file)
 	cub->map_flag = false;
 	cub->line = NULL;
 	ft_reading_loop(cub);
+	if (cub->nb_of_players != 1)
+		ft_fatal_error_in_parsing(ONE_PLAYER, cub);
 	ft_init_before_new_reading_of_file(cub);
 	ft_check_if_all_elements_are_in_file(cub);
 	if (cub->map_last_line == 0)
