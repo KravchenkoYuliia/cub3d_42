@@ -6,40 +6,54 @@
 /*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 17:02:57 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/06 12:46:38 by jgossard         ###   ########.fr       */
+/*   Updated: 2025/10/07 09:55:51 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-// TODO: set every element to NULL after freeing
 static void	ft_free_paths_to_textures(t_cub *cub)
-{
-	if (cub->north.path)
-		free(cub->north.path);
-	if (cub->south.path)
-		free(cub->south.path);
-	if (cub->east.path)
-		free(cub->east.path);
-	if (cub->west.path)
-		free(cub->west.path);
-}
-
-// TODO: Set every element to NULL after freeing
-// TODO: Maybe use a while loop until NUM_SURFACE instead of using direct index
-// 	will make the function more agile in case if initialization change to more
-// 	surfaces
-static void	ft_free_colors(t_cub *cub)
 {
 	if (!cub)
 		return ;
-	if (cub->surface_color)
+	if (cub->north.path)
+	{	
+		free(cub->north.path);
+		cub->north.path = NULL;
+	}
+	if (cub->south.path)
 	{
-		if (cub->surface_color[0].colors)
-			free(cub->surface_color[0].colors);
-		if (cub->surface_color[1].colors)
-			free(cub->surface_color[1].colors);
-		free(cub->surface_color);
+		free(cub->south.path);
+		cub->south.path = NULL;
+	}
+	if (cub->east.path)
+	{
+		free(cub->east.path);
+		cub->east.path = NULL;
+	}
+	if (cub->west.path)
+	{
+		free(cub->west.path);
+		cub->west.path = NULL;
+	}
+}
+
+static void	ft_free_colors(t_cub *cub)
+{
+	int	i;
+
+	i = 0;
+	if (!cub)
+		return ;
+	while (i < NUM_SURFACE && cub->surface_color)
+	{
+
+		if (cub->surface_color[i].colors)
+		{
+			free(cub->surface_color[i].colors);
+			cub->surface_color[i].colors = NULL;
+		}
+		i++;
 	}
 }
 
