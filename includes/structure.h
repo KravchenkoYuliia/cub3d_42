@@ -6,7 +6,7 @@
 /*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 18:14:27 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/07 14:32:26 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/07 16:49:18 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef enum e_elements_of_parsing {
 	EA = 'E',
 	F = 'F',
 	C = 'C',
+	DONE = 'x',
 }	t_elements_of_parsing;
 /*
 typedef enum e_direction {
@@ -206,6 +207,9 @@ typedef struct s_cub {
 	size_t					map_longest_line;
 	bool					map_is_finished;
 	int						nb_of_players;
+	char					**map_to_check;
+	int						x_coordinate_of_player;
+	int						y_coordinate_of_player;
 	/* ########  PLAYER DATA  ######## */
 	t_player				*player;
 	/* ########  FRAME BUFFER (off-screen image) ######## */

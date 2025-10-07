@@ -6,7 +6,7 @@
 /*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 18:03:48 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/02 18:15:51 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/07 17:51:47 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,29 @@ bool	ft_line_has_no_1(char *line)
 		i++;
 	}
 	return (true);
+}
+
+char	**ft_copy_array_of_char(t_cub *cub)
+{
+	int		line;
+	char	**result;
+
+	if (!cub)
+		return (NULL);
+	line = 0;
+	result = calloc(cub->map_line_counter + 1, sizeof(char *));
+	if (!result)
+		return (NULL);
+	while (cub->map.grid[line])
+	{
+		result[line] = ft_strdup(cub->map.grid[line]);
+		if (!result[line])
+		{
+			ft_free_char_tab(result);
+			return (NULL);
+		}
+		line++;
+	}
+	result[line] = NULL;
+	return (result);
 }

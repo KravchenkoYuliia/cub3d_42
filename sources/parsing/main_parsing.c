@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   start_of_parsing.c                                 :+:      :+:    :+:   */
+/*   main_parsing.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 15:10:07 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/07 15:17:11 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/07 17:01:49 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,5 @@ void	ft_parsing(t_cub *cub, char *descriptional_file)
 		cub->map_last_line = cub->line_counter;
 	ft_fill_map_structure(cub, descriptional_file);
 	ft_handle_spaces_in_map(cub);
+	ft_path_finding(cub);
 }

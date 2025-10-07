@@ -6,23 +6,25 @@
 /*   By: yukravch <yukravch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 12:21:53 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/07 15:06:29 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/07 17:51:26 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-static void	ft_replace_first_and_last_line(t_cub *cub, int line, int i, bool first)
+static void	ft_replace_first_and_last_line(t_cub *cub,
+		int line, int i, bool first)
 {
 	if (!cub || !cub->map.grid || !cub->map.grid[line]
-			|| !cub->map.grid[line][i])
+		|| !cub->map.grid[line][i])
 		return ;
 	if (cub->map.grid[line][i] == SPACE)
 	{
 		cub->map.grid[line][i] = OUTSIDE_SPACE;
 		if (cub->map.grid[line][i + 1] && cub->map.grid[line][i + 1] == SPACE)
 			ft_replace_first_and_last_line(cub, line, i + 1, first);
-		if (i > 0 && cub->map.grid[line][i - 1] && cub->map.grid[line][i - 1] == SPACE)
+		if (i > 0 && cub->map.grid[line][i - 1]
+			&& cub->map.grid[line][i - 1] == SPACE)
 			ft_replace_first_and_last_line(cub, line, i - 1, first);
 		if (first == true)
 			ft_replace_first_and_last_line(cub, line + 1, i, first);

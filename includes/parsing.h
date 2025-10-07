@@ -6,7 +6,7 @@
 /*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 11:03:08 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/07 15:43:20 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/07 16:03:38 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,6 @@ void	ft_fill_map_structure(t_cub *cub, char *descriptional_file);
 void	ft_handle_spaces_in_map(t_cub *cub);
 void	ft_replace_outside_spaces(t_cub *cub);
 void	ft_replace_inside_spaces(t_cub *cub);
+void	ft_path_finding(t_cub *cub);
+
 #endif

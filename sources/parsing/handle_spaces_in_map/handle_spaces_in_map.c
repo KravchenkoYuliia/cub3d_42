@@ -6,7 +6,7 @@
 /*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 10:26:06 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/07 15:44:31 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/07 16:58:07 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,4 @@ void	ft_handle_spaces_in_map(t_cub *cub)
 	ft_make_map_rectangular(cub);
 	ft_replace_outside_spaces(cub);
 	ft_replace_inside_spaces(cub);
-	ft_print_map(cub->map.grid);
 }

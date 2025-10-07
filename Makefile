@@ -48,6 +48,7 @@ ${SRC_DIR}/parsing/checking/check_structures.c \
 ${SRC_DIR}/parsing/handle_spaces_in_map/handle_spaces_in_map.c \
 ${SRC_DIR}/parsing/handle_spaces_in_map/replace_outside_spaces.c \
 ${SRC_DIR}/parsing/handle_spaces_in_map/replace_inside_spaces.c \
+${SRC_DIR}/parsing/path_finding/path_finding.c \
 ${SRC_DIR}/initialization/init_cub.c \
 ${SRC_DIR}/initialization/init_mlx.c \
 ${SRC_DIR}/initialization/init_map.c \

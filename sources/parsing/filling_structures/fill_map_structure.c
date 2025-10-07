@@ -6,7 +6,7 @@
 /*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 11:56:07 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/07 15:20:06 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/07 17:08:13 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ static void	ft_reading_loop_to_take_map(t_cub *cub)
 			cub->map_line_counter++;
 		}
 		free(cub->line);
+		cub->line = NULL;
 		i++;
 	}
 }

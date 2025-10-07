@@ -6,7 +6,7 @@
 /*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 12:20:00 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/07 14:33:09 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/07 17:53:05 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,8 @@ static bool	ft_init_map_parsing(t_cub *cub)
 	if (!cub)
 		return (false);
 	cub->line_counter = 0;
+	cub->map_flag = false;
+	cub->line = NULL;
 	cub->nb_of_line_in_file = 0;
 	cub->map_first_line = 0;
 	cub->map_last_line = 0;
@@ -69,6 +71,8 @@ static bool	ft_init_map_parsing(t_cub *cub)
 	cub->map_longest_line = 0;
 	cub->map_is_finished = false;
 	cub->nb_of_players = 0;
+	cub->x_coordinate_of_player = 0;
+	cub->y_coordinate_of_player = 0;
 	return (true);
 }
 

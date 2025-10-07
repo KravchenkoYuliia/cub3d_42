@@ -6,13 +6,14 @@
 /*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 14:03:15 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/07 15:16:57 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/07 17:52:19 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	ft_fill_elements_tracker(t_cub *cub, int elements_tracker[NUM_OF_ELEMENTS_IN_FILE])
+void	ft_fill_elements_tracker(t_cub *cub,
+	int elements_tracker[NUM_OF_ELEMENTS_IN_FILE])
 {
 	elements_tracker[0] = cub->elements_tracker.north;
 	elements_tracker[1] = cub->elements_tracker.south;
