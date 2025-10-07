@@ -6,7 +6,7 @@
 /*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 17:29:48 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/03 16:28:39 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/07 09:42:27 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void	ft_check_line_only_has_valid_char(t_cub *cub)
 	{
 		if (ft_strchr("NSEW", cub->line[i]) != NULL)
 			cub->nb_of_players++;
-		if (cub->nb_of_players < 1)
+		if (cub->nb_of_players != 1)
 			ft_fatal_error_in_parsing(ONE_PLAYER, cub);
 		if (ft_strchr("01 NSEW", cub->line[i]) == NULL)
 		{
