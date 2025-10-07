@@ -34,16 +34,17 @@ CFLAGS = -Wall -Werror -Wextra $(IFLAGS)
 
 ############################# INPUT & OBJECT FILES #############################
 SRC_FILES = ${SRC_DIR}/main.c \
-${SRC_DIR}/parsing/check_args.c \
+${SRC_DIR}/parsing/checking/check_args.c \
 ${SRC_DIR}/parsing/read_descriptional_file.c \
 ${SRC_DIR}/parsing/handle_every_line_in_file.c \
-${SRC_DIR}/parsing/check_texture.c \
-${SRC_DIR}/parsing/check_rgb_colors.c \
-${SRC_DIR}/parsing/check_rgb_colors.c \
-${SRC_DIR}/parsing/check_map.c \
-${SRC_DIR}/parsing/fill_structures.c \
-${SRC_DIR}/parsing/fill_map_structure.c \
-${SRC_DIR}/parsing/check_structures.c \
+${SRC_DIR}/parsing/checking/check_texture.c \
+${SRC_DIR}/parsing/checking/check_rgb_colors.c \
+${SRC_DIR}/parsing/checking/check_rgb_colors.c \
+${SRC_DIR}/parsing/checking/check_map.c \
+${SRC_DIR}/parsing/filling_structures/fill_structures.c \
+${SRC_DIR}/parsing/filling_structures/fill_map_structure.c \
+${SRC_DIR}/parsing/checking/check_structures.c \
+${SRC_DIR}/parsing/handle_spaces_in_map/handle_spaces_in_map.c \
 ${SRC_DIR}/initialization/init_cub.c \
 ${SRC_DIR}/initialization/init_mlx.c \
 ${SRC_DIR}/initialization/init_map.c \
@@ -106,7 +107,7 @@ $(CUB3D_STATIC_LIB): $(COMMON_OBJ_FILES)
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.c
 	@echo "$(YELLOW_COLOR)Compiling: $(DEFAULT_COLOR) $<"
 	@mkdir -p $(@D)
-	@$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) $(GFLAG) -c $< -o $@ #TODO remove -g3
 
 $(EXEC): $(LIBS) $(CUB3D_STATIC_LIB) $(MAIN_OBJ)
 	@$(CC) $(CFLAGS) $(MAIN_OBJ) $(CUB3D_STATIC_LIB) $(LIBS) $(MLX_FLAG) $(MATH_LIB_FLAG) -o $@

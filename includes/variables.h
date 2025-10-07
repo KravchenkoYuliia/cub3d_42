@@ -6,7 +6,7 @@
 /*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 15:05:00 by jgossard          #+#    #+#             */
-/*   Updated: 2025/10/06 15:32:45 by jgossard         ###   ########.fr       */
+/*   Updated: 2025/10/07 11:25:08 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,6 @@
 # define FOV_SCALE 0.66
 # define DEFAULT_MOVE_SPEED 0.05
 # define DEFAULT_ROTATE_SPEED 0.03
-# define SPACE " "
+# define SPACE ' '
 
 #endif

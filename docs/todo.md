@@ -43,11 +43,14 @@
 
 - [x] no empty lines in map 
 - [x] Check that we only have `1`, `0`, `N`, `S`,`E`, `W`, SPACE 
-- [] Check that the map is closed with walls `1`
 - [x] check that there is only 1 player (letter on the map)
 	- [x] if no player or more that 1 - error msg
 - [x] check that map is at the end of file 
-
+- [] Check that the map is closed with walls `1`
+- [] handle spaces:
+	- [] make the map rectangular to parse the spaces from the outside of the map
+	- [] all spaces from the outside of the map replace (temporarily??) with smth else
+	- [] now recheck all the map and all spaces found are considered now as inside spaces - replace with 		`0` to mark floor
 
 ## MinilibX
 

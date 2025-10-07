@@ -6,7 +6,7 @@
 /*   By: yukravch <yukravch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 17:46:13 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/03 13:53:39 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/07 11:04:02 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@
 # include "variables.h"
 # include "structure.h"
 # include "utils.h"
+# include "parsing.h"
 
 //INITIALIZATION
 
@@ -38,20 +39,6 @@ void		ft_init_mlx(t_cub *cub);
 void		ft_init_map(t_cub *cub);
 void		ft_init_before_new_reading_of_file(t_cub *cub);
 t_player	*ft_init_player(t_cub *data);
-
-//PARSING
-void	ft_check_args(int ac, char **av);
-void	ft_parsing(t_cub *cub, char *descriptional_file);
-void	ft_handle_every_line(t_cub *cub);
-bool	ft_this_is_texture(t_cub *cub);
-void	ft_check_texture(t_cub *cub);
-void	ft_check_rgb_colors(t_cub *cub);
-void	ft_check_map(t_cub *cub);
-void	ft_read_fd_till_the_end(int fd);
-void	ft_choose_direction_if_texture(t_cub *cub);
-void	ft_choose_surface_if_color(t_cub *cub);
-void	ft_check_if_all_elements_are_in_file(t_cub *cub);
-void	ft_fill_map_structure(t_cub *cub, char *descriptional_file);
 
 //EVENT
 
