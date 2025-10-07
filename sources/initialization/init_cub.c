@@ -6,7 +6,7 @@
 /*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 12:20:00 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/06 12:50:01 by jgossard         ###   ########.fr       */
+/*   Updated: 2025/10/07 14:33:09 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,9 +81,9 @@ t_cub	*ft_init_cub(void)
 		return (NULL);
 	cub->surface_color = NULL;
 	if (!ft_init_elements_tracker(cub)
-			|| !ft_init_texture_paths(cub)
-			|| !ft_init_surface_color(cub)
-			|| !ft_init_map_parsing(cub))
+		|| !ft_init_texture_paths(cub)
+		|| !ft_init_surface_color(cub)
+		|| !ft_init_map_parsing(cub))
 		return (ft_free_cub(cub), NULL);
 	cub->player = ft_init_player(cub);
 	if (!cub->player)

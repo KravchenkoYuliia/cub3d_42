@@ -6,7 +6,7 @@
 /*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 12:01:52 by jgossard          #+#    #+#             */
-/*   Updated: 2025/10/06 15:33:15 by jgossard         ###   ########.fr       */
+/*   Updated: 2025/10/07 14:28:32 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,7 @@ t_player	*ft_init_player(t_cub *data)
 	if (!player)
 		return (NULL);
 	if (!ft_get_player_position(&data->map, player)
-			|| !ft_get_player_direction(&data->map, player))
+		|| !ft_get_player_direction(&data->map, player))
 		return (free(player), NULL);
 	ft_memset(&player->input, 0, sizeof(t_input));
 	player->move_speed = DEFAULT_MOVE_SPEED;

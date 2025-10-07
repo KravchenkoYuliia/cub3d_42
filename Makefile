@@ -45,6 +45,7 @@ ${SRC_DIR}/parsing/filling_structures/fill_structures.c \
 ${SRC_DIR}/parsing/filling_structures/fill_map_structure.c \
 ${SRC_DIR}/parsing/checking/check_structures.c \
 ${SRC_DIR}/parsing/handle_spaces_in_map/handle_spaces_in_map.c \
+${SRC_DIR}/parsing/handle_spaces_in_map/replace_outside_spaces.c \
 ${SRC_DIR}/initialization/init_cub.c \
 ${SRC_DIR}/initialization/init_mlx.c \
 ${SRC_DIR}/initialization/init_map.c \
@@ -58,6 +59,8 @@ ${SRC_DIR}/utils/check_file_extension.c \
 ${SRC_DIR}/utils/string_of_map_utils.c \
 ${SRC_DIR}/utils/fd_utils.c \
 ${SRC_DIR}/utils/string_utils.c \
+${SRC_DIR}/utils/print/print_map.c \
+
 
 # Remove main.c from SRC_FILES to create a list of common files
 COMMON_FILES = $(filter-out $(SRC_DIR)/main.c, $(SRC_FILES))

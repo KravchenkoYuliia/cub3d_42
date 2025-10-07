@@ -6,7 +6,7 @@
 /*   By: yukravch <yukravch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 17:46:13 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/07 11:04:02 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/07 14:25:57 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void		ft_init_mlx(t_cub *cub);
 void		ft_init_map(t_cub *cub);
 void		ft_init_before_new_reading_of_file(t_cub *cub);
 t_player	*ft_init_player(t_cub *data);
+void		ft_print_map(char **map);
 
 //EVENT
 
