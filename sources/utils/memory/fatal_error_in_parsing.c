@@ -6,7 +6,7 @@
 /*   By: yukravch <yukravch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 14:22:17 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/07 09:57:26 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/07 10:46:16 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	ft_fatal_error_in_parsing(char *msg, t_cub *cub)
 	{
 		ft_read_fd_till_the_end(cub->fd);
 		close(cub->fd);
+		cub->fd = -1;
 	}
 	if (cub->line)
 	{

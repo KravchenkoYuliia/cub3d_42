@@ -6,7 +6,7 @@
 /*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 17:02:57 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/07 09:55:51 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/07 10:40:31 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static void	ft_free_colors(t_cub *cub)
 	i = 0;
 	if (!cub)
 		return ;
-	while (i < NUM_SURFACE && cub->surface_color)
+	while (i < NUM_SURFACES && cub->surface_color)
 	{
 
 		if (cub->surface_color[i].colors)
@@ -55,6 +55,8 @@ static void	ft_free_colors(t_cub *cub)
 		}
 		i++;
 	}
+	free(cub->surface_color);
+	cub->surface_color = NULL;
 }
 
 static void	ft_free_mlx(t_cub *cub)
