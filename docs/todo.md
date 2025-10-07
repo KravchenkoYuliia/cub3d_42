@@ -2,10 +2,10 @@
 
 ### Parsing must be done in 2 stages
 ####Part1
- - [] Split line and if it's `NO` `SO` `EA` `WE` `F` or `C` -> work with it
+ - [x] Split line and if it's `NO` `SO` `EA` `WE` `F` or `C` -> work with it
 
 #### Part 2
- - [] EVERYTHING that is not from Part 1 -> is a map (all type of errors as well)
+ - [x] EVERYTHING that is not from Part 1 -> is a map (all type of errors as well)
  - [] working with map without split -> character by character
 
 
@@ -13,42 +13,40 @@
 
 
 ### Verif file
-- [] check that the program only has 1 argument ✅
-- [] check that we are using a `.cub` file ✅
-- [] check if file is empty 
-	- [] if there is nothing inside ✅
-	- [] if there only are spaces/tabs/new_lines:
-		read lines with get next line -> check it -> put it to struct and 
-		if struct is NULL after reading file -> map is empty
-- [] if empty lines, go to the next one except in the map
+- [x] check that the program only has 1 argument 
+- [x] check that we are using a `.cub` file 
+- [x] check if file is empty 
+	- [x] if there is nothing inside 
+	- [x] if there only are spaces/tabs/new_lines
+- [x] if empty lines, go to the next one except in the map
 - Check that the file always start with the element
-	- [] start with the direction (`NO`, `SO`, `WE`, `EA`)✅
-	- [] check that there is every element and without doubles
-	- [] path_to_texture
-		- [] check that only 1 path is given, otherwise - error msg✅
-		- [] check that the path file exist ✅
-		- [] check that the extension file is correct ✅
-			- [] extension .xpm (X Pixmap) is supported with MinilibX
+	- [x] start with the direction (`NO`, `SO`, `WE`, `EA`)
+	- [x] check that there is every element and without doubles
+	- [x] path_to_texture
+		- [x] check that only 1 path is given, otherwise - error msg
+		- [x] check that the path file exist 
+		- [x] check that the extension file is correct 
+			- [x] extension .xpm (X Pixmap) is supported with MinilibX
 				function -> mlx_xpm_file_to_image
-	- [] RGB format
-		- [] there only are 2 elements ('C' or 'F' + rgb color) ✅
-		- [] should start with `C` or `F` ✅
-		- [] check value well between `0` and `255` and only digit character ✅
-		- [] check that we have 3 differents value for `R`, `G`, `B` and no more ✅
-			- [] if more than 3 write an error message ✅
-		- [] check that the values are separated with `,` ✅
-		- [] only two ',' ✅
-		- [] no ',' at the start and at the end of RGB ✅		
+	- [x] RGB format
+		- [x] there only are 2 elements ('C' or 'F' + rgb color) 
+		- [x] should start with `C` or `F` 
+		- [x] check value well between `0` and `255` and only digit character 
+		- [x] check that we have 3 differents value for `R`, `G`, `B` and no more 
+			- [x] if more than 3 write an error message 
+		- [x] check that the values are separated with `,`
+		- [x] only two ',' 
+		- [x] no ',' at the start and at the end of RGB
 		
 
 ### Verif map
 
-- [] no empty lines in map ✅
-- [] Check that we only have `1`, `0`, `N`, `S`,`E`, `W`, SPACE ✅
+- [x] no empty lines in map 
+- [x] Check that we only have `1`, `0`, `N`, `S`,`E`, `W`, SPACE 
 - [] Check that the map is closed with walls `1`
-- [] check that there is only 1 player (letter on the map)
-	- [] if no player or more that 1 - error msg
-- [] check that map is at the end of file ✅
+- [x] check that there is only 1 player (letter on the map)
+	- [x] if no player or more that 1 - error msg
+- [x] check that map is at the end of file 
 
 
 ## MinilibX
