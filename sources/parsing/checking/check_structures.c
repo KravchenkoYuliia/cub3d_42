@@ -6,7 +6,7 @@
 /*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 14:03:15 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/07 17:52:19 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/08 14:39:16 by yukravch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,6 @@ void	ft_check_if_all_elements_are_in_file(t_cub *cub)
 		}
 		i++;
 	}
+	if (cub->nb_of_players != 1)
+		ft_fatal_error_in_parsing(ONE_PLAYER, cub);
 }
