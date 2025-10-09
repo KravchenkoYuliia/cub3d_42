@@ -6,7 +6,7 @@
 
 #### Part 2
  - [x] EVERYTHING that is not from Part 1 -> is a map (all type of errors as well)
- - [] working with map without split -> character by character
+ - [x] working with map without split -> character by character
 
 
 
@@ -46,8 +46,8 @@
 - [x] check that there is only 1 player (letter on the map)
 	- [x] if no player or more that 1 - error msg
 - [x] check that map is at the end of file 
-- [] Check that the map is closed with walls `1`
-- [] handle spaces:
+- [x] Check that the map is closed with walls `1`
+- [x] handle spaces:
 	- [] make the map rectangular to parse the spaces from the outside of the map
 	- [] all spaces from the outside of the map replace (temporarily??) with smth else
 	- [] now recheck all the map and all spaces found are considered now as inside spaces - replace with 		`0` to mark floor
