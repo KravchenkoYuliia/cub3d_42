@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   load_texture.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/22 17:44:37 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/15 18:30:59 by jgossard         ###   ########.fr       */
+/*   Created: 2025/10/10 11:27:16 by jgossard          #+#    #+#             */
+/*   Updated: 2025/10/10 11:27:27 by jgossard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int	main(int ac, char **av)
+bool	ft_load_all_textures(t_cub *data)
 {
-	t_cub	*cub;
-
-	ft_check_args(ac, av);
-	cub = ft_init_cub();
-	if (!cub)
-		exit(EXIT_FAILURE);
-	if (!ft_init_mlx(cub))
-		ft_close_program(cub, EXIT_FAILURE);
-	ft_parsing(cub, av[1]);
-	cub->player = ft_init_player(cub);
-	if (!cub->player)
-		ft_close_program(cub, EXIT_FAILURE);
-	if (!ft_load_all_textures(cub))
-		ft_close_program(cub, EXIT_FAILURE);
-	return (0);
+	if (!data || !data->mlx)
+		return (false);
+	if (!ft_init_texture_image(data->mlx, &data->north))
+		return (false);
+	if (!ft_init_texture_image(data->mlx, &data->south))
+		return (false);
+	if (!ft_init_texture_image(data->mlx, &data->east))
+		return (false);
+	if (!ft_init_texture_image(data->mlx, &data->west))
+		return (false);
+	return (true);
 }

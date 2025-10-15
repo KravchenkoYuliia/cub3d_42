@@ -76,23 +76,18 @@ typedef struct s_image
 	int		endian;
 }	t_image;
 
-/* ########  TEXTURE STRUCT PART  ######## */
+// /* ########  TEXTURE STRUCT PART  ######## */
 
-typedef struct s_texture_image
+typedef struct s_texture
 {
-	t_image	*img;
-	char	*data;
+	char	*path;
+	void	*img;
+	char	*addr;
 	int		width;
 	int		height;
 	int		bpp;
 	int		line_len;
 	int		endian;
-}	t_texture_image;
-
-typedef struct s_texture
-{
-	char				*path;
-	t_texture_image		image;
 }	t_texture;
 
 /* ########  MAP STRUCT PART  ######## */

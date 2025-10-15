@@ -30,5 +30,6 @@ void	ft_handle_spaces_in_map(t_cub *cub);
 void	ft_replace_outside_spaces(t_cub *cub);
 void	ft_replace_inside_spaces(t_cub *cub);
 void	ft_path_finding(t_cub *cub);
+bool	ft_load_all_textures(t_cub *data);
 
 #endif
