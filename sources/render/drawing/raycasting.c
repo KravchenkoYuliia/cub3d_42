@@ -6,7 +6,7 @@
 /*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 14:51:38 by jgossard          #+#    #+#             */
-/*   Updated: 2025/10/15 18:49:33 by jgossard         ###   ########.fr       */
+/*   Updated: 2025/10/15 18:49:40 by jgossard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,6 +117,8 @@ bool	ft_raycasting(t_cub *data)
 		if (!ft_calculate_perpendicular_wall_distance(ray, data->player))
 			return (free(ray), false);
 		if (!ft_calculate_line_height(ray))
+			return (free(ray), false);
+		if (!ft_draw_wall_column(data, ray, x_coordinate))
 			return (free(ray), false);
 		free(ray);
 		x_coordinate++;
