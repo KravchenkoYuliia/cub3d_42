@@ -13,6 +13,7 @@
 #ifndef RENDER_H
 # define RENDER_H
 
+bool	ft_render_and_display_image(t_cub *data);
 int		ft_run_game(t_cub *cub);
 
 # endif

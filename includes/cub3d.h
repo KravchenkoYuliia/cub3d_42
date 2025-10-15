@@ -31,6 +31,7 @@
 # include "structure.h"
 # include "utils.h"
 # include "parsing.h"
+# include "render.h"
 
 //INITIALIZATION
 
