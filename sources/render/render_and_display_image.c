@@ -6,7 +6,7 @@
 /*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/28 22:14:45 by jgossard          #+#    #+#             */
-/*   Updated: 2025/10/15 18:41:34 by jgossard         ###   ########.fr       */
+/*   Updated: 2025/10/15 18:44:58 by jgossard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ bool	ft_render_and_display_image(t_cub *data)
 		return (false);
 	ft_reset_image(data->image);
 	if (!ft_draw_ceiling(data->image, data->surface_color[1].color))
+		return (false);
+	if (!ft_draw_floor(data->image, data->surface_color[0].color))
 		return (false);
 	ft_display_image(data->mlx, data->image);
 	return (true);

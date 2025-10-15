@@ -66,6 +66,7 @@ ${SRC_DIR}/utils/memory/close_window.c \
 ${SRC_DIR}/utils/memory/close_program.c \
 ${SRC_DIR}/utils/print/print_map.c \
 ${SRC_DIR}/render/drawing/draw_ceiling.c \
+${SRC_DIR}/render/drawing/draw_floor.c \
 ${SRC_DIR}/render/render_and_display_image.c \
 ${SRC_DIR}/render/run_game.c \
 ${SRC_DIR}/render/utils/draw_pixel.c \
