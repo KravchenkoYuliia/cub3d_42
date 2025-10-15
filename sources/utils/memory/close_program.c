@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   close_program.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/22 17:44:37 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/06 11:05:58 by jgossard         ###   ########.fr       */
+/*   Created: 2025/09/22 17:02:57 by yukravch          #+#    #+#             */
+/*   Updated: 2025/10/15 18:24:35 by jgossard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int	main(int ac, char **av)
+int	ft_close_program(t_cub *cub, int exit_code)
 {
-	t_cub	*cub;
-
-	ft_check_args(ac, av);
-	cub = ft_init_cub();
-	if (!cub)
-		exit(EXIT_FAILURE);
-	if (!ft_init_mlx(cub))
-		ft_close_program(cub, EXIT_FAILURE);
-	ft_parsing(cub, av[1]);
-	ft_init_mlx(cub);
-	return (0);
+	if (cub)
+		ft_free_cub(cub);
+	exit(exit_code);
+	return (exit_code);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_structures.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 14:03:15 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/08 14:39:16 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/13 17:55:51 by jgossard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	ft_check_if_all_elements_are_in_file(t_cub *cub)
 		if (elements_tracker[i] != TAKEN)
 		{
 			write(STDERR_FILENO, ELEMENT_MISSING, ft_strlen(ELEMENT_MISSING));
-			ft_free_all_and_exit(cub);
+			ft_close_program(cub, EXIT_FAILURE);
 		}
 		i++;
 	}

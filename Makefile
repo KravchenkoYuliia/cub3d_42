@@ -62,6 +62,8 @@ ${SRC_DIR}/utils/check_file_extension.c \
 ${SRC_DIR}/utils/string_of_map_utils.c \
 ${SRC_DIR}/utils/fd_utils.c \
 ${SRC_DIR}/utils/string_utils.c \
+${SRC_DIR}/utils/memory/close_window.c \
+${SRC_DIR}/utils/memory/close_program.c \
 ${SRC_DIR}/utils/print/print_map.c \
 
 

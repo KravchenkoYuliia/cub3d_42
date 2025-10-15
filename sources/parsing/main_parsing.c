@@ -3,19 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   main_parsing.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 15:10:07 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/07 17:01:49 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/15 18:28:05 by jgossard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
+//TODO: renamed file parsing.c
 void	ft_parsing(t_cub *cub, char *descriptional_file)
 {
 	if (!cub || !descriptional_file)
-		ft_free_all_and_exit(cub);
+		ft_close_program(cub, EXIT_FAILURE);
 	ft_open_descriptional_file(cub, descriptional_file);
 	ft_reading_loop(cub);
 	ft_init_before_new_reading_of_file(cub);
@@ -26,3 +27,23 @@ void	ft_parsing(t_cub *cub, char *descriptional_file)
 	ft_handle_spaces_in_map(cub);
 	ft_path_finding(cub);
 }
+
+/*
+Parsing flow
+
+	ft_parsing()
+		├── ft_open_descriptional_file()
+		├── ft_reading_loop()
+		│	├── ft_handle_every_line()
+		│	│	├── ft_check_line()
+		│	│	├── ft_put_line_to_struct()
+		│	│		├── ft_choose_direction_if_texture() ← texture paths stored here
+		│	│		└── ft_choose_surface_if_color()
+		│	└── (continues line by line)
+		├── ft_init_before_new_reading_of_file()
+		├── ft_check_if_all_elements_are_in_file()
+		├── ft_fill_map_structure()
+		├── ft_handle_spaces_in_map()
+		└── ft_path_finding()
+
+*/

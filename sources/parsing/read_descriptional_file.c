@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   read_descriptional_file.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yukravch <yukravch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 12:19:02 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/08 14:43:53 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/13 17:55:40 by jgossard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	ft_reading_loop(t_cub *cub)
 			if (first_time == true)
 			{
 				write(STDERR_FILENO, EMPTY_FILE, ft_strlen(EMPTY_FILE));
-				ft_free_all_and_exit(cub);
+				ft_close_program(cub, EXIT_FAILURE);
 			}
 			break ;
 		}

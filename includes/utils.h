@@ -28,7 +28,8 @@ char		**ft_copy_array_of_char(t_cub *cub);
 
 void		ft_fatal_error_in_parsing(char *msg, t_cub *cub);
 void		ft_free_cub(t_cub *cub);
-int			ft_free_all_and_exit(t_cub *cub);
+int			ft_close_window(t_cub *cub);
+int			ft_close_program(t_cub *cub, int exit_code);
 void		ft_free_map(t_cub *cub);
 
 #endif

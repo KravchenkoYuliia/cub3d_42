@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fatal_error_in_parsing.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yukravch <yukravch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 14:22:17 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/07 10:46:16 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/13 17:55:56 by jgossard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,5 @@ void	ft_fatal_error_in_parsing(char *msg, t_cub *cub)
 		ft_free_char_tab(cub->elements_of_line);
 		cub->elements_of_line = NULL;
 	}
-	ft_free_all_and_exit(cub);
+	ft_close_program(cub, EXIT_FAILURE);
 }

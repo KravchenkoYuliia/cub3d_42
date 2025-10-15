@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 12:22:09 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/03 14:52:51 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/13 17:55:17 by jgossard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_init_map(t_cub *cub)
 	cub->map.height = cub->map_line_counter;
 	cub->map.grid = calloc(cub->map_line_counter + 1, sizeof(char *));
 	if (!cub->map.grid)
-		ft_free_all_and_exit(cub);
+		ft_close_program(cub, EXIT_FAILURE);
 	while (i < cub->map_line_counter)
 	{
 		cub->map.grid[i] = calloc(cub->map_longest_line + 1, sizeof(char));
