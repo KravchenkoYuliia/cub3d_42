@@ -23,6 +23,7 @@ char		*ft_strcpy(char *dest, char *src);
 bool		ft_line_has_no_1(char *line);
 void		ft_open_descriptional_file(t_cub *cub, char *file);
 char		**ft_copy_array_of_char(t_cub *cub);
+void		ft_update_player_vectors(t_player *player);
 
 // Memory
 

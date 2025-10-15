@@ -57,6 +57,7 @@ static bool	ft_get_player_position(t_map *map, t_player *player)
 		}
 		y++;
 	}
+	write(STDERR_FILENO, ERR_PLAYER_POSITION, ft_strlen(ERR_PLAYER_POSITION));
 	return (false);
 }
 
@@ -119,7 +120,10 @@ t_player	*ft_init_player(t_cub *data)
 		return (NULL);
 	if (!ft_get_player_position(&data->map, player)
 		|| !ft_get_player_direction(&data->map, player))
+	{
+		write(STDERR_FILENO, ERR_INIT_PLAYER, ft_strlen(ERR_INIT_PLAYER));
 		return (free(player), NULL);
+	}
 	ft_memset(&player->input, 0, sizeof(t_input));
 	player->move_speed = DEFAULT_MOVE_SPEED;
 	player->rotate_speed = DEFAULT_ROTATE_SPEED;

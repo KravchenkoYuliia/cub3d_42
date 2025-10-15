@@ -89,8 +89,5 @@ t_cub	*ft_init_cub(void)
 		|| !ft_init_surface_color(cub)
 		|| !ft_init_map_parsing(cub))
 		return (ft_free_cub(cub), NULL);
-	cub->player = ft_init_player(cub);
-	if (!cub->player)
-		return (ft_free_cub(cub), NULL);
 	return (cub);
 }
