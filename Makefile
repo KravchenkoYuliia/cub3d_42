@@ -73,7 +73,7 @@ ${SRC_DIR}/render/render_and_display_image.c \
 ${SRC_DIR}/render/run_game.c \
 ${SRC_DIR}/render/utils/draw_pixel.c \
 ${SRC_DIR}/render/utils/get_texture_pixel.c \
-
+${SRC_DIR}/event/move_player.c \
 
 # Remove main.c from SRC_FILES to create a list of common files
 COMMON_FILES = $(filter-out $(SRC_DIR)/main.c, $(SRC_FILES))

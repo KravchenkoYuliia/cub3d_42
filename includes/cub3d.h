@@ -43,6 +43,7 @@ t_player	*ft_init_player(t_cub *data);
 void		ft_print_map(char **map);
 
 //EVENT
+bool		ft_move_player(t_player *player, t_cub *cub);
 
 void		ft_hook(t_cub *cub);
 
