@@ -18,6 +18,7 @@ int		ft_run_game(t_cub *cub);
 
 /* Drawing */
 
+bool	ft_raycasting(t_cub *data);
 bool	ft_draw_ceiling(t_image *img, int color);
 bool	ft_draw_floor(t_image *img, int color);
 

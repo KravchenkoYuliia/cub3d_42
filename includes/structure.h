@@ -138,11 +138,12 @@ typedef struct s_player {
 
 /* ########  IMAGE + RENDERING + RAYCASTING STRUCT PART  ######## */
 
-typedef struct s_raycasting {
+typedef struct s_ray
+{
 	// Ray direction linked to the player position on the map
 	double	ray_dir_x;
 	double	ray_dir_y;
-	// Tab cell associated with
+	// used to index into the map grid to check if the current tile is a wall ('1' in the map array) or open space ('0')
 	int		map_x;
 	int		map_y;
 	// Distance from the current position to the next x- or y-side in the map grid.
@@ -164,17 +165,16 @@ typedef struct s_raycasting {
 	// 0 → NS wall (x-side was hit).
 	// 1 → EW wall (y-side was hit).
 	int		side_hit;
-}	t_raycasting;
-
-typedef struct s_draw
-{
+	double	wall_dist;
+	double	wall_x;
 	int		line_height; // height of line to draw
 	int		draw_start;	// lowest pixel of wall
 	int		draw_end; // highest pixel of wall
+
 	int		tex_x; // x coordinate of texture
 	double	tex_pos; // starting texture position
 	double	step; // how much to increase tex_pos per screen pixel
-}	t_draw;
+}	t_ray;
 
 /* ########  MAIN STRUCT PART  ######## */
 typedef struct s_cub {
