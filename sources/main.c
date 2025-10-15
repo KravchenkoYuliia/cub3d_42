@@ -28,5 +28,7 @@ int	main(int ac, char **av)
 		ft_close_program(cub, EXIT_FAILURE);
 	if (!ft_load_all_textures(cub))
 		ft_close_program(cub, EXIT_FAILURE);
+	if (ft_run_game(cub) == EXIT_FAILURE)
+		ft_close_program(cub, EXIT_FAILURE);
 	return (0);
 }
