@@ -33,5 +33,6 @@
 # define SPACE ' '
 # define OUTSIDE_SPACE '+'
 # define NUM_OF_ELEMENTS_IN_FILE 7
+# define BITS_PER_BYTE 8
 
 #endif

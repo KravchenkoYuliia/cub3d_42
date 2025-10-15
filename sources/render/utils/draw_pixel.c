@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   render.h                                           :+:      :+:    :+:   */
+/*   draw_pixel.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/28 22:45:57 by jgossard          #+#    #+#             */
-/*   Updated: 2025/10/15 18:42:06 by jgossard         ###   ########.fr       */
+/*   Created: 2025/10/01 14:57:03 by jgossard          #+#    #+#             */
+/*   Updated: 2025/10/15 16:41:46 by jgossard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RENDER_H
-# define RENDER_H
+#include "cub3d.h"
 
-bool	ft_render_and_display_image(t_cub *data);
-int		ft_run_game(t_cub *cub);
+void	ft_draw_pixel(t_image *image, int x, int y, int color)
+{
+	char	*dst;
+	int		bytes_per_pixel;
 
-/* Drawing */
+	if (x >= WIN_WIDTH || y >= WIN_HEIGHT || x < 0 || y < 0)
+		return ;
+	bytes_per_pixel = image->bpp / BITS_PER_BYTE;
+	dst = image->addr + ((y * image->line_len) + (x * bytes_per_pixel));
+	*(unsigned int *)(dst) = color;
+}
 
-bool	ft_draw_ceiling(t_image *img, int color);
-
-/* UTILS */
-
-void	ft_draw_pixel(t_image *image, int x, int y, int color);
-
-# endif
