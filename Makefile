@@ -34,30 +34,29 @@ CFLAGS = -Wall -Werror -Wextra $(IFLAGS)
 
 ############################# INPUT & OBJECT FILES #############################
 SRC_FILES = ${SRC_DIR}/main.c \
-${SRC_DIR}/parsing/main_parsing.c \
 ${SRC_DIR}/parsing/checking/check_args.c \
-${SRC_DIR}/parsing/read_descriptional_file.c \
-${SRC_DIR}/parsing/handle_every_line_in_file.c \
-${SRC_DIR}/parsing/checking/check_texture.c \
-${SRC_DIR}/parsing/checking/check_rgb_colors.c \
-${SRC_DIR}/parsing/checking/check_rgb_colors.c \
 ${SRC_DIR}/parsing/checking/check_map.c \
-${SRC_DIR}/parsing/filling_structures/fill_structures.c \
-${SRC_DIR}/parsing/filling_structures/fill_map_structure.c \
+${SRC_DIR}/parsing/checking/check_rgb_colors.c \
 ${SRC_DIR}/parsing/checking/check_structures.c \
+${SRC_DIR}/parsing/checking/check_texture.c \
+${SRC_DIR}/parsing/filling_structures/fill_map_structure.c \
+${SRC_DIR}/parsing/filling_structures/parse_and_store_texture_path.c \
+${SRC_DIR}/parsing/filling_structures/parse_surface_color.c \
+${SRC_DIR}/parsing/filling_structures/load_textures.c \
+${SRC_DIR}/parsing/handle_every_line_in_file.c \
 ${SRC_DIR}/parsing/handle_spaces_in_map/handle_spaces_in_map.c \
-${SRC_DIR}/parsing/handle_spaces_in_map/replace_outside_spaces.c \
 ${SRC_DIR}/parsing/handle_spaces_in_map/replace_inside_spaces.c \
+${SRC_DIR}/parsing/handle_spaces_in_map/replace_outside_spaces.c \
+${SRC_DIR}/parsing/main_parsing.c \
 ${SRC_DIR}/parsing/path_finding/path_finding.c \
-${SRC_DIR}/initialization/init_cub.c \
+${SRC_DIR}/parsing/read_descriptional_file.c \
 ${SRC_DIR}/initialization/init_mlx.c \
 ${SRC_DIR}/initialization/init_map.c \
+${SRC_DIR}/initialization/init_cub.c \
 ${SRC_DIR}/initialization/init_player.c \
-${SRC_DIR}/hooks/hook.c \
-${SRC_DIR}/utils/memory/fatal_error_in_parsing.c \
-${SRC_DIR}/utils/memory/free_all_and_exit.c \
-${SRC_DIR}/utils/memory/free_cub.c \
-${SRC_DIR}/utils/memory/free_map.c \
+${SRC_DIR}/initialization/init_ray.c \
+${SRC_DIR}/initialization/init_texture_image.c \
+${SRC_DIR}/initialization/init_image.c \
 ${SRC_DIR}/utils/check_file_extension.c \
 ${SRC_DIR}/utils/string_of_map_utils.c \
 ${SRC_DIR}/utils/fd_utils.c \

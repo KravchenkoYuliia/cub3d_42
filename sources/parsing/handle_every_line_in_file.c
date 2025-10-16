@@ -37,8 +37,8 @@ static void	ft_check_line(t_cub *cub)
 
 static void	ft_put_line_to_struct(t_cub *cub)
 {
-	ft_choose_direction_if_texture(cub);
-	ft_choose_surface_if_color(cub);
+	ft_parse_and_store_texture_path(cub);
+	ft_parse_surface_color(cub);
 	ft_free_char_tab(cub->elements_of_line);
 	cub->elements_of_line = NULL;
 	if (cub->type == MAP)

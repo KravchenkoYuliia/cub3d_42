@@ -6,7 +6,7 @@
 /*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 12:20:00 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/07 17:53:05 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/15 14:44:53 by jgossard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,21 +37,20 @@ static bool	ft_init_elements_tracker(t_cub *cub)
 	return (true);
 }
 
-static bool	ft_init_surface_color(t_cub *cub)
+bool	ft_init_surface_color(t_cub *cub)
 {
 	int	i;
 
-	i = 0;
 	if (!cub)
 		return (false);
-	cub->surface_color = calloc(NUM_SURFACES, sizeof(t_surface_color));
+	cub->surface_color = malloc(NUM_SURFACES * sizeof(t_surface_color));
 	if (!cub->surface_color)
 		return (false);
+	i = 0;
 	while (i < NUM_SURFACES)
 	{
-		cub->surface_color[i].colors = calloc(RGB_SIZE, sizeof(int));
-		if (!cub->surface_color[i].colors)
-			return (false);
+		cub->surface_color[i].surface_type = i;
+		cub->surface_color[i].color = 0;
 		i++;
 	}
 	return (true);

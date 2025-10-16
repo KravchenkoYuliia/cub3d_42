@@ -51,7 +51,7 @@ typedef enum e_button {
 
 typedef struct s_surface_color {
 	int	surface_type;
-	int	*colors;
+	int	color;
 }	t_surface_color;
 /*
 typedef struct s_point {
