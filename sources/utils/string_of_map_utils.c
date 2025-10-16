@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   string_of_map_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 18:03:48 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/07 17:51:47 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/16 14:54:51 by jgossard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ char	**ft_copy_array_of_char(t_cub *cub)
 	if (!cub)
 		return (NULL);
 	line = 0;
-	result = calloc(cub->map_line_counter + 1, sizeof(char *));
+	result = ft_calloc(cub->map_line_counter + 1, sizeof(char *));
 	if (!result)
 		return (NULL);
 	while (cub->map.grid[line])
