@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   handle_every_line_in_file.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yukravch <yukravch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 17:50:34 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/07 11:28:46 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/16 14:09:18 by jgossard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,19 +48,19 @@ static void	ft_put_line_to_struct(t_cub *cub)
 		if (ft_strlen(cub->line) > cub->map_longest_line)
 			cub->map_longest_line = ft_strlen(cub->line);
 	}
-}	
+}
 
 void	ft_handle_every_line(t_cub *cub)
 {
 	if (!cub)
 		exit(EXIT_FAILURE);
-	if (ft_line_only_has_whitespaces(cub->line) == true) //empty line
+	if (ft_line_only_has_whitespaces(cub->line) == true)
 	{
 		if (cub->map_flag == true && cub->map_is_finished == false)
 		{
 			cub->map_is_finished = true;
 			cub->map_last_line = cub->line_counter - 1;
-		}	
+		}
 		free(cub->line);
 		return ;
 	}

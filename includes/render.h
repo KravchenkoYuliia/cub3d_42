@@ -6,7 +6,7 @@
 /*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/28 22:45:57 by jgossard          #+#    #+#             */
-/*   Updated: 2025/10/16 14:28:43 by jgossard         ###   ########.fr       */
+/*   Updated: 2025/10/16 14:42:39 by jgossard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,4 @@ bool	ft_draw_floor(t_image *img, int color);
 void	ft_draw_pixel(t_image *image, int x, int y, int color);
 int		ft_get_texture_pixel(t_texture *texture, int x, int y);
 
-# endif
+#endif

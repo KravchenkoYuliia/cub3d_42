@@ -6,13 +6,13 @@
 /*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 13:21:04 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/15 17:54:54 by jgossard         ###   ########.fr       */
+/*   Updated: 2025/10/16 14:10:38 by jgossard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-static void ft_parse_direction_texture_path(t_cub *cub,
+static void	ft_parse_direction_texture_path(t_cub *cub,
 	int elements_tracker, char **path_to_texture)
 {
 	if (elements_tracker == TAKEN)
@@ -24,14 +24,14 @@ static void ft_parse_direction_texture_path(t_cub *cub,
 	ft_strcpy(*path_to_texture, cub->elements_of_line[1]);
 }
 
-static void ft_handle_texture_type(t_cub *cub, int tracker,
+static void	ft_handle_texture_type(t_cub *cub, int tracker,
 	char **path, int *tracker_ptr)
 {
 	ft_parse_direction_texture_path(cub, tracker, path);
 	*tracker_ptr = TAKEN;
 }
 
-void ft_parse_and_store_texture_path(t_cub *cub)
+void	ft_parse_and_store_texture_path(t_cub *cub)
 {
 	if (!cub)
 		return ;

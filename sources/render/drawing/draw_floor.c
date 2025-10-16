@@ -6,7 +6,7 @@
 /*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 15:17:08 by jgossard          #+#    #+#             */
-/*   Updated: 2025/10/13 18:24:13 by jgossard         ###   ########.fr       */
+/*   Updated: 2025/10/16 14:12:48 by jgossard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,3 @@ bool	ft_draw_floor(t_image *img, int color)
 	}
 	return (true);
 }
-

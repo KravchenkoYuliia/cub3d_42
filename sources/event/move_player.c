@@ -6,7 +6,7 @@
 /*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 14:20:02 by jgossard          #+#    #+#             */
-/*   Updated: 2025/10/15 17:39:19 by jgossard         ###   ########.fr       */
+/*   Updated: 2025/10/16 14:12:34 by jgossard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,6 @@ static void	ft_rotate_player(t_player *player)
 		player->dir_angle -= player->rotate_speed;
 	if (player->input.camera_turn_right)
 		player->dir_angle += player->rotate_speed;
-
 	if (player->dir_angle < 0.0f)
 		player->dir_angle += 2.0f * M_PI;
 	else if (player->dir_angle >= 2.0f * M_PI)

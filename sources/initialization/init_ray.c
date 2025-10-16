@@ -6,7 +6,7 @@
 /*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 11:24:48 by jgossard          #+#    #+#             */
-/*   Updated: 2025/10/15 17:20:31 by jgossard         ###   ########.fr       */
+/*   Updated: 2025/10/16 14:11:17 by jgossard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static bool	ft_set_delta_distance(t_ray *rc)
 t_ray	*ft_init_ray(t_player *player, int x_coordinate)
 {
 	t_ray	*ray;
-	double			camera_x;
+	double	camera_x;
 
 	if (!player || x_coordinate < 0 || x_coordinate > WIN_WIDTH)
 		return (NULL);

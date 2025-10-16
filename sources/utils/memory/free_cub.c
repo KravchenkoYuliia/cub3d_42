@@ -6,7 +6,7 @@
 /*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 17:02:57 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/15 15:33:10 by jgossard         ###   ########.fr       */
+/*   Updated: 2025/10/16 14:12:16 by jgossard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static void	ft_free_paths_to_textures(t_cub *cub)
 static void	ft_free_colors(t_cub *cub)
 {
 	if (!cub || !cub->surface_color)
-		return;
+		return ;
 	free(cub->surface_color);
 	cub->surface_color = NULL;
 }
@@ -57,7 +57,7 @@ static void	ft_free_player(t_cub *cub)
 static void	ft_destroy_image(t_cub *cub)
 {
 	if (!cub || !cub->image)
-		return;
+		return ;
 	if (cub->image->img)
 		mlx_destroy_image(cub->mlx->ptr, cub->image->img);
 	free(cub->image);

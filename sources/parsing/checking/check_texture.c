@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_texture.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yukravch <yukravch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 11:10:32 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/02 13:12:16 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/16 14:09:58 by jgossard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,6 @@ void	ft_check_texture(t_cub *cub)
 		ft_fatal_error_in_parsing(NULL, cub);
 	if (cub->map_flag == true)
 		ft_fatal_error_in_parsing(MAP_PLACING, cub);
-	//must be 2 elements -> 1)direction 2)/path 3)NULL
 	if (ft_checking_nb_of_elements_in_array(cub->elements_of_line, 2) == false)
 		ft_fatal_error_in_parsing(WRONG_TEXTURE, cub);
 	ft_checking_direction(cub);

@@ -6,7 +6,7 @@
 /*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 16:00:04 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/15 18:05:13 by jgossard         ###   ########.fr       */
+/*   Updated: 2025/10/16 14:11:07 by jgossard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ bool	ft_init_mlx(t_cub *cub)
 	if (!cub->mlx->win)
 		return (ft_free_mlx(cub), false);
 	cub->image = ft_init_image(cub->mlx,
-		WIN_WIDTH,
-		WIN_HEIGHT);
+			WIN_WIDTH,
+			WIN_HEIGHT);
 	if (!cub->image)
 		return (ft_free_mlx(cub), false);
 	return (true);

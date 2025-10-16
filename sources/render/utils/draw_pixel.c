@@ -6,7 +6,7 @@
 /*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 14:57:03 by jgossard          #+#    #+#             */
-/*   Updated: 2025/10/15 16:41:46 by jgossard         ###   ########.fr       */
+/*   Updated: 2025/10/16 14:14:19 by jgossard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,3 @@ void	ft_draw_pixel(t_image *image, int x, int y, int color)
 	dst = image->addr + ((y * image->line_len) + (x * bytes_per_pixel));
 	*(unsigned int *)(dst) = color;
 }
-

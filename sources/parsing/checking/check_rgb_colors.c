@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_rgb_colors.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yukravch <yukravch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/26 13:43:09 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/02 19:11:53 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/16 14:09:45 by jgossard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,10 +98,9 @@ void	ft_check_rgb_colors(t_cub *cub)
 		ft_fatal_error_in_parsing(NULL, cub);
 	if (cub->map_flag == true)
 		ft_fatal_error_in_parsing(MAP_PLACING, cub);
-	//must be 2: 1)F/C     2)12,12,12     3)NULL
 	if (ft_checking_nb_of_elements_in_array(cub->elements_of_line, 2) == false)
 		ft_fatal_error_in_parsing(WRONG_COLOR_FORMAT, cub);
-	if (cub->elements_of_line[0][1]) //only 1 letter 'C' or 'F'
+	if (cub->elements_of_line[0][1])
 		ft_fatal_error_in_parsing(WRONG_COLOR_FORMAT, cub);
 	ft_check_commas(cub);
 	ft_check_numbers(cub);
