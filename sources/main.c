@@ -6,7 +6,7 @@
 /*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 17:44:37 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/15 18:30:59 by jgossard         ###   ########.fr       */
+/*   Updated: 2025/10/15 18:37:50 by jgossard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,6 @@ int	main(int ac, char **av)
 		ft_close_program(cub, EXIT_FAILURE);
 	if (ft_run_game(cub) == EXIT_FAILURE)
 		ft_close_program(cub, EXIT_FAILURE);
+	ft_events_listener(cub);
 	return (0);
 }

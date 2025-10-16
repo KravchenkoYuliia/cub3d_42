@@ -32,5 +32,10 @@ void		ft_free_cub(t_cub *cub);
 int			ft_close_window(t_cub *cub);
 int			ft_close_program(t_cub *cub, int exit_code);
 void		ft_free_map(t_cub *cub);
+int			ft_close_window(t_cub *cub);
+
+// Print
+
+void		ft_print_map(char **map);
 
 #endif
