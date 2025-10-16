@@ -6,7 +6,7 @@
 /*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 12:01:52 by jgossard          #+#    #+#             */
-/*   Updated: 2025/10/07 14:28:32 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/15 16:56:50 by jgossard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,10 +102,7 @@ static bool	ft_get_player_direction(t_map *map, t_player *player)
 		player->dir_angle = M_PI / 2;
 	else
 		player->dir_angle = 0;
-	player->dir_x = cos(player->dir_angle);
-	player->dir_y = sin(player->dir_angle);
-	player->plane_x = -player->dir_y * FOV_SCALE;
-	player->plane_y = player->dir_x * FOV_SCALE;
+	ft_update_player_vectors(player);
 	return (true);
 }
 
