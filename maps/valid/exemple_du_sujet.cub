@@ -1,9 +1,9 @@
-NO ./maps/texture/brick.xpm
-SO ./maps/texture/brick.xpm
-WE ./maps/texture/brick.xpm
-EA ./maps/texture/brick.xpm
+NO ./maps/texture/cat/north_cat.xpm
+SO ./maps/texture/cat/south_serval_cat.xpm
+WE ./maps/texture/cat/western_cat.xpm
+EA ./maps/texture/cat/eastern-cat.xpm
 
-F 220,100,0
+F 255,128,0
 C 225,30,0
 
 
