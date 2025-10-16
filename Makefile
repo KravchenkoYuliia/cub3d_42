@@ -74,6 +74,7 @@ ${SRC_DIR}/utils/string_of_map_utils.c \
 ${SRC_DIR}/render/drawing/raycasting.c \
 ${SRC_DIR}/render/drawing/draw_ceiling.c \
 ${SRC_DIR}/render/drawing/draw_floor.c \
+${SRC_DIR}/render/drawing/draw_wall_loop.c \
 ${SRC_DIR}/render/drawing/draw_wall_column.c \
 ${SRC_DIR}/render/render_and_display_image.c \
 ${SRC_DIR}/render/run_game.c \

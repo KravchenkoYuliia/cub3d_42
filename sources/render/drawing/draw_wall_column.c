@@ -6,7 +6,7 @@
 /*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 16:41:41 by jgossard          #+#    #+#             */
-/*   Updated: 2025/10/15 17:48:02 by jgossard         ###   ########.fr       */
+/*   Updated: 2025/10/16 14:29:09 by jgossard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,41 +44,6 @@ static int	ft_compute_tex_x(t_texture *tex, t_ray *ray)
 	if (tex_x >= tex->width)
 		tex_x = tex->width - 1;
 	return (tex_x);
-}
-
-static bool	ft_draw_wall_loop(
-	t_cub *cub, t_texture *tex, t_ray *ray, int x)
-{
-	double	step;
-	double	tex_pos;
-	int		y;
-	int		tex_y;
-	int		color;
-
-	if (!cub || !tex || !ray)
-		return (false);
-	step = (double)tex->height / (double)ray->line_height;
-	tex_pos = (ray->draw_start - (WIN_HEIGHT / 2.0)
-				+ (ray->line_height / 2.0)) * step;
-	y = ray->draw_start;
-	while (y <= ray->draw_end)
-	{
-		tex_y = (int)tex_pos;
-		tex_pos += step;
-		if (tex_y < 0)
-			tex_y = 0;
-		else if (tex_y >= tex->height)
-			tex_y = tex->height - 1;
-		color = ft_get_texture_pixel(tex, ray->tex_x, tex_y);
-		if (color == -1)
-		{
-			y++;
-			continue ; // TODO: why not returning false ?
-		}
-		ft_draw_pixel(cub->image, x, y, color);
-		y++;
-	}
-	return (true);
 }
 
 bool	ft_draw_wall_column(t_cub *cub, t_ray *ray, int x)
