@@ -58,9 +58,9 @@ ${SRC_DIR}/initialization/init_ray.c \
 ${SRC_DIR}/initialization/init_texture_image.c \
 ${SRC_DIR}/initialization/init_image.c \
 ${SRC_DIR}/utils/check_file_extension.c \
-${SRC_DIR}/utils/string_of_map_utils.c \
 ${SRC_DIR}/utils/fd_utils.c \
 ${SRC_DIR}/utils/string_utils.c \
+${SRC_DIR}/utils/update_player_vectors.c \
 ${SRC_DIR}/utils/memory/close_window.c \
 ${SRC_DIR}/utils/memory/close_program.c \
 ${SRC_DIR}/utils/memory/fatal_error_in_parsing.c \
@@ -70,6 +70,7 @@ ${SRC_DIR}/utils/memory/free_image.c \
 ${SRC_DIR}/utils/memory/free_cub.c \
 ${SRC_DIR}/utils/memory/free_texture.c \
 ${SRC_DIR}/utils/print/print_map.c \
+${SRC_DIR}/utils/string_of_map_utils.c \
 ${SRC_DIR}/render/drawing/raycasting.c \
 ${SRC_DIR}/render/drawing/draw_ceiling.c \
 ${SRC_DIR}/render/drawing/draw_floor.c \
@@ -78,6 +79,7 @@ ${SRC_DIR}/render/render_and_display_image.c \
 ${SRC_DIR}/render/run_game.c \
 ${SRC_DIR}/render/utils/draw_pixel.c \
 ${SRC_DIR}/render/utils/get_texture_pixel.c \
+${SRC_DIR}/event/events_listener.c \
 ${SRC_DIR}/event/move_player.c \
 
 # Remove main.c from SRC_FILES to create a list of common files
