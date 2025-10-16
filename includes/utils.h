@@ -6,7 +6,7 @@
 /*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 11:14:20 by jgossard          #+#    #+#             */
-/*   Updated: 2025/10/07 16:43:30 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/16 10:50:17 by jgossard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,13 @@ void		ft_update_player_vectors(t_player *player);
 // Memory
 
 void		ft_fatal_error_in_parsing(char *msg, t_cub *cub);
+void		ft_destroy_textures(t_cub *data);
 void		ft_free_cub(t_cub *cub);
 int			ft_close_window(t_cub *cub);
 int			ft_close_program(t_cub *cub, int exit_code);
 void		ft_free_map(t_cub *cub);
+void		ft_free_mlx(t_cub *cub);
+void		ft_free_image(t_mlx *mlx, t_image *image);
 int			ft_close_window(t_cub *cub);
 
 // Print

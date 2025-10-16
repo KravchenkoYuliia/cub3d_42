@@ -6,7 +6,7 @@
 /*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 17:02:57 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/07 14:31:41 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/15 15:33:10 by jgossard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	ft_free_paths_to_textures(t_cub *cub)
 	if (!cub)
 		return ;
 	if (cub->north.path)
-	{	
+	{
 		free(cub->north.path);
 		cub->north.path = NULL;
 	}
@@ -40,44 +40,10 @@ static void	ft_free_paths_to_textures(t_cub *cub)
 
 static void	ft_free_colors(t_cub *cub)
 {
-	int	i;
-
-	i = 0;
-	if (!cub)
-		return ;
-	while (i < NUM_SURFACES && cub->surface_color)
-	{
-		if (cub->surface_color[i].colors)
-		{
-			free(cub->surface_color[i].colors);
-			cub->surface_color[i].colors = NULL;
-		}
-		i++;
-	}
+	if (!cub || !cub->surface_color)
+		return;
 	free(cub->surface_color);
 	cub->surface_color = NULL;
-}
-
-static void	ft_free_mlx(t_cub *cub)
-{
-	if (!cub)
-		return ;
-	if (cub->mlx)
-	{
-		if (cub->mlx->win && cub->mlx->ptr)
-		{
-			mlx_destroy_window(cub->mlx->ptr, cub->mlx->win);
-			cub->mlx->win = NULL;
-		}
-		if (cub->mlx->ptr)
-		{
-			mlx_destroy_display(cub->mlx->ptr);
-			free(cub->mlx->ptr);
-			cub->mlx->ptr = NULL;
-		}
-		free(cub->mlx);
-		cub->mlx = NULL;
-	}
 }
 
 static void	ft_free_player(t_cub *cub)
@@ -88,10 +54,22 @@ static void	ft_free_player(t_cub *cub)
 	cub->player = NULL;
 }
 
+static void	ft_destroy_image(t_cub *cub)
+{
+	if (!cub || !cub->image)
+		return;
+	if (cub->image->img)
+		mlx_destroy_image(cub->mlx->ptr, cub->image->img);
+	free(cub->image);
+	cub->image = NULL;
+}
+
 void	ft_free_cub(t_cub *cub)
 {
 	if (!cub)
 		return ;
+	ft_destroy_image(cub);
+	ft_destroy_textures(cub);
 	ft_free_mlx(cub);
 	ft_free_map(cub);
 	ft_free_paths_to_textures(cub);
