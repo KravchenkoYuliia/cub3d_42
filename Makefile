@@ -131,7 +131,7 @@ $(CUB3D_STATIC_LIB): $(COMMON_OBJ_FILES)
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.c
 	@echo "$(YELLOW_COLOR)Compiling: $(DEFAULT_COLOR) $<"
 	@mkdir -p $(@D)
-	@$(CC) $(CFLAGS) $(GFLAG) -c $< -o $@ #TODO remove -g3
+	@$(CC) $(CFLAGS) $(GFLAG) -c $< -o $@
 
 $(EXEC): $(LIBS) $(CUB3D_STATIC_LIB) $(MAIN_OBJ)
 	@$(CC) $(CFLAGS) $(MAIN_OBJ) $(CUB3D_STATIC_LIB) $(LIBS) $(MLX_FLAG) $(MATH_LIB_FLAG) -o $@

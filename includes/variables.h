@@ -6,7 +6,7 @@
 /*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 15:05:00 by jgossard          #+#    #+#             */
-/*   Updated: 2025/10/15 18:58:36 by jgossard         ###   ########.fr       */
+/*   Updated: 2025/10/16 15:17:08 by jgossard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 /* WINDOW SIZE */
 
-# define WIN_WIDTH 2560 //TODO adapter a chaque ecran
-# define WIN_HEIGHT 1440 //TODO adapter a chaque ecran
+# define WIN_WIDTH 2560
+# define WIN_HEIGHT 1440
 # define WIN_NAME "cub3d"
 /* KEYBOARD KEY */
 

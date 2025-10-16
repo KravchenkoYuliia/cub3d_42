@@ -6,13 +6,12 @@
 /*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 15:10:07 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/15 18:28:05 by jgossard         ###   ########.fr       */
+/*   Updated: 2025/10/16 15:17:14 by jgossard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-//TODO: renamed file parsing.c
 void	ft_parsing(t_cub *cub, char *descriptional_file)
 {
 	if (!cub || !descriptional_file)
