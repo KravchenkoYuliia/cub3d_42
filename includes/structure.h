@@ -6,7 +6,7 @@
 /*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 18:14:27 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/16 14:46:22 by jgossard         ###   ########.fr       */
+/*   Updated: 2025/10/16 14:49:26 by jgossard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,12 +116,13 @@ typedef struct s_player {
  * @brief Represents a single ray cast in the 2D raycasting engine.
  *
  * The t_ray structure holds all the data needed to cast a ray from the player's
- * point of view, determine where it intersects with the world, and render a vertical
- * wall slice based on that intersection. It includes directional information,
- * distance calculations, texture mapping details, and render bounds.
+ * point of view, determine where it intersects with the world, and render a
+ * vertical wall slice based on that intersection. It includes directional
+ * information, distance calculations, texture mapping details,
+ * and render bounds.
  *
  * Fields:
- * 
+ *
  * - ray_dir_x / ray_dir_y:
  *     The X and Y components of the ray's direction vector.
  *
@@ -129,15 +130,16 @@ typedef struct s_player {
  *     The current grid cell (map square) that the ray is in.
  *
  * - side_dist_x / side_dist_y:
- *     Distance from the player’s position to the first X-side or Y-side of the grid.
+ *     Distance from the player’s position to the first X-side or Y-side of the
+ *     grid.
  *
  * - delta_dist_x / delta_dist_y:
  *     Distance the ray travels between each X-side or Y-side. These values are
  *     constant for each ray and used to incrementally step through the map.
  *
  * - perp_wall_dist:
- *     The perpendicular distance from the player to the wall. Used to avoid fish-eye
- *     distortion and to scale the wall slice correctly.
+ *     The perpendicular distance from the player to the wall. Used to avoid
+ *     fish-eye distortion and to scale the wall slice correctly.
  *
  * - step_x / step_y:
  *     The direction to step in the map grid (either +1 or -1) for both axes.
@@ -146,30 +148,33 @@ typedef struct s_player {
  *     Boolean flag indicating whether the ray has hit a wall.
  *
  * - side_hit:
- *     Which side of the wall was hit: 0 for an X-side, 1 for a Y-side. Useful for
- *     shading or texture orientation.
+ *     Which side of the wall was hit: 0 for an X-side, 1 for a Y-side. Useful
+ *     for shading or texture orientation.
  *
  * - wall_dist:
- *     The actual distance from the player to the wall hit (redundant in some cases
- *     with perp_wall_dist but can be kept for clarity or debug purposes).
+ *     The actual distance from the player to the wall hit (redundant in some
+ *     cases with perp_wall_dist but can be kept for clarity or debug purposes).
  *
  * - wall_x:
- *     The exact X position on the wall hit, used for horizontal texture mapping.
+ *     The exact X position on the wall hit, used for horizontal texture mapping
  *
  * - line_height:
- *     The height of the vertical wall slice to draw, based on the wall distance.
+ *     The height of the vertical wall slice to draw, based on the wall distance
  *
  * - draw_start / draw_end:
- *     The Y-coordinate range on screen where the vertical wall line will be drawn.
+ *     The Y-coordinate range on screen where the vertical wall line will be
+ *     drawn.
  *
  * - tex_x:
  *     The X coordinate in the texture that corresponds to the wall hit.
  *
  * - tex_pos:
- *     The initial Y position in the texture to start sampling from during rendering.
+ *     The initial Y position in the texture to start sampling from during
+ *     rendering.
  *
  * - step:
- *     The amount to step in the texture per screen pixel (vertical) when rendering.
+ *     The amount to step in the texture per screen pixel (vertical) when
+ *     rendering.
  */
 typedef struct s_ray
 {
