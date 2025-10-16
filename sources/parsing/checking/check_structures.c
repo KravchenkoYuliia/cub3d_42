@@ -24,6 +24,7 @@ void	ft_fill_elements_tracker(t_cub *cub,
 	elements_tracker[6] = cub->elements_tracker.map;
 }
 
+// TODO: too verbose, renamed to something like ft_validate_required_elements, ft_ensure_all_elements_present
 void	ft_check_if_all_elements_are_in_file(t_cub *cub)
 {
 	int	i;

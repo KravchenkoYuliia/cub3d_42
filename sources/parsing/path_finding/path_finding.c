@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   path_finding.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yukravch <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 15:50:59 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/09 11:52:02 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/13 12:10:43 by jgossard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,8 @@ static void	ft_try_to_exit_the_map(t_cub *cub, int x, int y)
 	}
 }
 
+// TODO: which path are we looking for?
+// TODO: not clear the purpose of the function just based on the name
 void	ft_path_finding(t_cub *cub)
 {
 	if (!cub)

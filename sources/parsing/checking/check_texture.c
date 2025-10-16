@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   check_texture.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yukravch <yukravch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 11:10:32 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/02 13:12:16 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/13 12:00:13 by jgossard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
+// TODO: renamed to ft_is_texture_line
 bool	ft_this_is_texture(t_cub *cub)
 {
 	if (!cub)

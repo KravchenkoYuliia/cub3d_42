@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   handle_every_line_in_file.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yukravch <yukravch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 17:50:34 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/07 11:28:46 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/15 15:09:50 by jgossard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
+// TODO: name is too vagues, what do we check? rename to something like ft_parse_line_type
 static void	ft_check_line(t_cub *cub)
 {
 	if (cub->elements_of_line[0][0] == 'C' ||
@@ -34,7 +35,7 @@ static void	ft_check_line(t_cub *cub)
 		cub->type = MAP;
 	}
 }
-
+// TODO: renamed to something like ft_store_line_data
 static void	ft_put_line_to_struct(t_cub *cub)
 {
 	ft_parse_and_store_texture_path(cub);
@@ -48,8 +49,10 @@ static void	ft_put_line_to_struct(t_cub *cub)
 		if (ft_strlen(cub->line) > cub->map_longest_line)
 			cub->map_longest_line = ft_strlen(cub->line);
 	}
-}	
+}
 
+// TODO: renamed ft_parse_lines, function named is confusing
+// Rename to something like ft_process_cub_line, ft_parse_and_store_line
 void	ft_handle_every_line(t_cub *cub)
 {
 	if (!cub)
@@ -60,7 +63,7 @@ void	ft_handle_every_line(t_cub *cub)
 		{
 			cub->map_is_finished = true;
 			cub->map_last_line = cub->line_counter - 1;
-		}	
+		}
 		free(cub->line);
 		return ;
 	}

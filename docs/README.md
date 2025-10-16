@@ -18,3 +18,7 @@
 command: **xdpyinfo | grep dimensions**
 result: **dimensions:    2560x1440 pixels (677x381 millimeters)**
 
+## Sources:
+- [Ray-Casting [C]](https://ismailassil.medium.com/ray-casting-c-8bfae2c2fc13)
+- [Raycasting tutorials](https://lodev.org/cgtutor/raycasting.html)
+- [cub3d](https://hackmd.io/@nszl/H1LXByIE2#player-direction-vector-and-camera-vector)

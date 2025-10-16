@@ -6,7 +6,7 @@
 /*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 18:14:27 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/07 16:49:18 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/15 18:34:17 by jgossard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,20 +25,6 @@ typedef enum e_elements_of_parsing {
 	C = 'C',
 	DONE = 'x',
 }	t_elements_of_parsing;
-/*
-typedef enum e_direction {
-	NORTH = 'N',
-	SOUTH = 'S',
-	WEST = 'W',
-	EAST = 'E',
-}	t_direction;
-*/
-/*
-typedef enum e_surface_type {
-	SURFACE_FLOOR = 'F',
-	SURFACE_CEILING = 'C',
-}	t_surface_type;
-*/
 
 typedef enum e_button {
 	BUTTON_W,
@@ -53,20 +39,14 @@ typedef struct s_surface_color {
 	int	surface_type;
 	int	color;
 }	t_surface_color;
-/*
-typedef struct s_point {
-	int	x;
-	int	y;
-	int	z;
-	int	color; //TODO utile?
-}	t_point;
-*/
+
 typedef struct s_mlx {
 	void	*ptr;
 	void	*win;
 	// void	*img; // move to its own structure
 }	t_mlx;
 
+// t_image changes every frame (it’s redrawn continuously)
 typedef struct s_image
 {
 	void	*img;

@@ -13,10 +13,10 @@
 
 
 ### Verif file
-- [x] check that the program only has 1 argument 
-- [x] check that we are using a `.cub` file 
-- [x] check if file is empty 
-	- [x] if there is nothing inside 
+- [x] check that the program only has 1 argument
+- [x] check that we are using a `.cub` file
+- [x] check if file is empty
+	- [x] if there is nothing inside
 	- [x] if there only are spaces/tabs/new_lines
 - [x] if empty lines, go to the next one except in the map
 - Check that the file always start with the element
@@ -24,28 +24,28 @@
 	- [x] check that there is every element and without doubles
 	- [x] path_to_texture
 		- [x] check that only 1 path is given, otherwise - error msg
-		- [x] check that the path file exist 
-		- [x] check that the extension file is correct 
+		- [x] check that the path file exist
+		- [x] check that the extension file is correct
 			- [x] extension .xpm (X Pixmap) is supported with MinilibX
 				function -> mlx_xpm_file_to_image
 	- [x] RGB format
-		- [x] there only are 2 elements ('C' or 'F' + rgb color) 
-		- [x] should start with `C` or `F` 
-		- [x] check value well between `0` and `255` and only digit character 
-		- [x] check that we have 3 differents value for `R`, `G`, `B` and no more 
-			- [x] if more than 3 write an error message 
+		- [x] there only are 2 elements ('C' or 'F' + rgb color)
+		- [x] should start with `C` or `F`
+		- [x] check value well between `0` and `255` and only digit character
+		- [x] check that we have 3 differents value for `R`, `G`, `B` and no more
+			- [x] if more than 3 write an error message
 		- [x] check that the values are separated with `,`
-		- [x] only two ',' 
+		- [x] only two ','
 		- [x] no ',' at the start and at the end of RGB
-		
+
 
 ### Verif map
 
-- [x] no empty lines in map 
-- [x] Check that we only have `1`, `0`, `N`, `S`,`E`, `W`, SPACE 
+- [x] no empty lines in map
+- [x] Check that we only have `1`, `0`, `N`, `S`,`E`, `W`, SPACE
 - [x] check that there is only 1 player (letter on the map)
 	- [x] if no player or more that 1 - error msg
-- [x] check that map is at the end of file 
+- [x] check that map is at the end of file
 - [x] Check that the map is closed with walls `1`
 - [x] handle spaces:
 	- [] make the map rectangular to parse the spaces from the outside of the map
@@ -57,13 +57,26 @@
 - [] TODO check this line "the management of your window must remain smooth: changing to another win-
 dow, minimizing, etc."
 
-## Ray Casting
+## Input Handling
 
-- [] TODO read smth about it
+- [] Movement keys
+	- [] W : move forward
+	- [] S : move backward
+	- [] A : move left
+	- [] D : move right
+- [] Camera Keys
+	- [] left arrow: rotate camera left
+	- [] right arrow: rotate camera right
+- Built image and apply it to the window
 
+## Raycasting Engine
 
-> test qqch important
+For each vertical stripe on screen:
+- [] Calculate ray direction based on player direction and camera plane
+- [] Find which grid square the ray hits (DDA algorithm)
+- [] Calculate distance to wall hit to determine wall height
+- [] Draw vertical line on screen representing the wall slice (based on distance)
 
-```C
-int	i = 0;
-```
+Handle:
+- [] Wall collision detection (to prevent walking through walls)
+- [] Texture mapping on walls

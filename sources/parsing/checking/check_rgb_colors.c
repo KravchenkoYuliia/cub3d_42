@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_rgb_colors.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yukravch <yukravch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jgossard <jgossard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/26 13:43:09 by yukravch          #+#    #+#             */
-/*   Updated: 2025/10/02 19:11:53 by yukravch         ###   ########.fr       */
+/*   Updated: 2025/10/13 12:02:23 by jgossard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,7 @@ static void	ft_check_commas(t_cub *cub)
 		ft_fatal_error_in_parsing(WRONG_COLOR_FORMAT, cub);
 }
 
+// TODO: too vague what it checks...better renamed it to ft_check_rgb_format
 void	ft_check_rgb_colors(t_cub *cub)
 {
 	if (!cub)
